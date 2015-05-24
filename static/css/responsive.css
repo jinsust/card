@@ -1,0 +1,1045 @@
+#contact_form {
+    margin: 0 auto;
+    width: 40%;
+}
+
+@media (min-width: 767px) and (max-width: 1330px) {
+
+.panel_small_shopping_card_view{
+	width:238px;
+	}
+.cart-scroll .col-md-4,.cart-scroll .col-md-2{
+	font-size: 11px;
+	}
+}
+@media (min-width: 767px) and (max-width: 992px) {
+.navigation {
+    margin-right: 0;
+}
+
+	}
+
+
+
+@media (max-width:1200px){
+/*.navbar-brand img{
+	width:280px;
+	}*/
+.navbar-brand{
+	padding-right:0;
+	}	
+.field1 {
+    width: 300px;
+}
+.options-block {
+    float: left;
+    min-height: 520px;
+}
+.field4 {
+    width: 163px;
+}
+.field3 {
+    width: 150px;
+}	
+.options-block h2{
+	font-size: 21px;
+	}
+.options-block p{
+	font-size: 14px;
+	}	
+.options-block {
+    min-height: 380px;
+}
+    .append_more_cls{
+       width: 50%;
+    }
+    .row_head_wb div {
+        font-size: 10px;
+    }
+    .above-section input, .above-section select {
+        font-size: 10px;
+        margin-right: 5px;
+        width: 103px !important;
+    }
+    .quick-buy-section label{
+        font-size:11px;
+    }
+    .quick-buy-section a {
+        float: left;
+        font-size: 11px;
+        margin: 9px 10px 0 3px;
+    }
+    .quick-buy-section {
+
+        padding: 11px 0;
+    }
+    .buy-heading {
+        font-size: 30px;
+
+    }
+    .pagination > li > a, .pagination > li > span {
+        font-size: 11px;
+        padding: 1px 5px;
+    }
+    .above-section .btn{
+       margin-top: 4px;
+
+    }
+    .left-nav h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .left-nav ul {
+        font-size: 10px;
+    }
+    .left-nav ul li {
+        padding: 0 0 7px 24px;
+    }
+
+    #grid_view_ h4 {
+        font-size: 13px;
+    }
+    #grid_view_ p {
+        font-size: 11px;
+    }
+    .left-nav li.active .cancle-icon {
+        display: block;
+        float: left;
+        margin-left: 9px;
+        margin-top: -3px;
+    }
+    .top-nav-linker{
+       font-size: 12px;
+    }
+    .merchants-cards .col-md-3 {
+        width: 33.3%;
+        height: 190px;
+    }
+    .paginator a {
+        padding: 2px 7px;
+    }
+
+    .hideCart_cls .left-nav{
+        min-height: 214px;
+    }
+    .wrap-padding {
+        border-right: medium none;
+    }
+    .panel_small_shopping_card_view {
+        right: 79px;
+        width: 181px;
+    }
+    .panel_body_small_shopping_card_view .p_rel {
+        width: 300px;
+    }
+	.cards_left_split {
+    background-image: url("../images/mail_card_img1.png");
+    background-position: -6px center;
+    border-radius: 8px;
+    float: left;
+    height: 200px;
+    position: relative;
+    width: 192px;
+}
+#step1From .field2 {
+    width: 300px;
+}
+#trade_more_lbl {
+    font-size: 10px;
+}
+}
+@media (max-width:1025px){
+#like_box .col-md-2{
+        width: 154px;
+    }
+#like_box.likeBox .col-md-2{
+        width: 146px;
+    }    
+.caption p a{
+font-size: 10px;
+
+}
+#step1From .field2 {
+    width: 220px;
+}
+}
+@media (max-width:992px){
+    .append_more_cls{
+        width: 100%;
+    }
+	#contact_form {
+    margin: 0 auto;
+    width: 80%;
+}
+    .results-shown.m_l_50.pull-left {
+        display: none;
+    }
+    #seals img {
+    height: auto;
+    max-width: 50px;
+    width: 60%;
+}
+#copyright > img {
+    height: auto;
+    width: 60%;
+}
+#copyright > em {
+    font-size: 6px;
+    right: 63px;
+}
+.block-2{
+	width:100%;
+	}
+    .navbar-inverse .navbar-nav > li > a{
+       font-size: 11px;
+    }
+    .top-login-links2 li a{
+        font-size: 11px;
+      }
+
+.address_box{
+width:100%;	
+	}
+
+    .search-box {
+        width: 123px;
+    }
+
+    .top-login-links2 ul{
+       margin:0px;
+        padding: 0px;
+
+    }
+.fix_nav{
+float:none;	
+	}
+	
+.navigation li a {
+    padding-right: 0;
+	padding-left:8px;
+	  font-size: 10px;
+}
+header .navbar-collapse {
+    float: right;
+    width: 530px;
+}
+.signIn_link{
+	margin-left:10px;
+	}
+.card_logo{
+	margin-left:0;
+	}	
+.navigation-2 li a {
+    font-size: 11px;
+    padding: 1px 0;
+    text-align: center;
+    width: 60px;
+}
+.select_box{
+	width: 170px;
+	}
+.select_box select{
+	}	
+.textfield {
+    width: 170px;
+}
+.field1 {
+    width: 220px;
+}
+.field2 {
+    width: 150px;
+}
+.btn-info2,.btn-red{
+	width:120px;
+	 font-size: 10px;
+	}
+.field4 {
+   	font-size: 10px;
+    margin-bottom: 10px;
+    width: 134px;
+}
+.field3 {
+    font-size: 10px;
+    width: 110px;
+}
+.field5 {
+    font-size: 10px;
+    width: 85px;
+}
+.capcha  img{
+	width:82px !important;
+	height:auto;
+	margin-top:7px;
+	}
+#step3From_registration input[type=text],#step3From_registration select,#step3From_registration input[type=password]{
+	margin-bottom:10px;
+	}
+.options-block {
+    float: left;
+    margin-bottom: 30px;
+    min-height: 320px;
+}
+
+.heading-3 {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #31b14a;
+    display: inline-block;
+    font-family: "Open Sans";
+    font-size: 45px;
+    font-weight: 300;
+    margin-bottom: -12px;
+    margin-top: 60px;
+    text-align: center;
+    text-indent: 0;
+}
+
+    .account_cls{
+        margin-top: 7px;
+    }
+    .spinner {
+        float: left;
+        width: 79px;
+    }
+    .back-to-top {
+        bottom: 53px;
+        width: 34px;
+    }
+    #paypal_address .col-md-4 {
+        margin-bottom: 7px;
+        text-indent: 5px;
+    }
+    .top-login-links2 {
+               margin-top: 28px;
+    }
+    .top-login-links2 li:nth-child(1) {
+        line-height: 22px;
+    }
+    .drop_icon_head {
+        margin-top: 6px;
+    }
+    .postal-total-payment {
+        padding-left: 0;
+        text-align: center;
+        float: left;
+        width: 100%;
+        margin-top: 0;
+    }
+    #check_confirm .btn {
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+    #check_confirm{
+        text-align: center;
+    }
+    #ach_confirm .col-md-6:nth-child(1) {
+        float: left;
+        margin-bottom: 21px;
+        width: 100%;
+    }
+    #ach_confirm .heading-5 {
+
+        font-size: 15px;
+    }
+    .step3From_Login {
+        float: left;
+        margin-top: 15px;
+        padding-left: 7px;
+    }
+    .block-2 h2 {
+        font-size: 15px;
+        margin: 5px 0 0 9px;
+    }
+    .amzLegal {
+        font-size: 13px;
+        padding: 18px;
+        width: 100%;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+	.gen-panel h3 {
+    font-size: 14px;
+   }
+   .btn-lg, .btn-group-lg > .btn {
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 1.33;
+    padding: 7px 16px;
+}
+.certify label {
+    width: 86%;
+}
+.over_view {
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+
+
+    .left-nav {
+        background: none repeat scroll 0 0 #f7f8f8;
+        font-size: 10px;
+        margin-top: 12px;
+        min-height: 170px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .left-nav ul li {
+        padding: 3px 0;
+    }
+    .left-nav h3 {
+     font-size: 13px;
+     padding-left: 19px;
+    }
+    .content-wraper {
+        border-left: medium none;
+    }
+
+    .quick-buy-section span {
+        font-size: 10px;
+    }
+
+    .left-nav li.active .cancle-icon {
+        display: block;
+        float: left;
+        margin-left: -12px;
+        margin-top: 0;
+    }
+    .advertisement-col-1{
+        display: none;
+    }
+    .sidebar-text-block{
+        display: none;
+    }
+    .sortbyprice_cls select{
+       float: left;
+        margin-top: 13px;
+    }
+    .cartStatus {
+        bottom: 0;
+        left: 0;
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: auto;
+    }
+    .cartStatus .panel_small_shopping_card_view {
+        bottom: 0;
+        margin-top: 0 !important;
+        position: relative !important;
+        right: 0;
+        top: 15px !important;
+        width: 100%;
+    }
+    .content-wraper-padding {
+        padding-right: 0;
+    }
+    .card-image {
+        width: 23%;
+    }
+    #orderSubmit{
+        font-size: 10px;
+
+    }
+    .detail-table .tablesorter-header-inner {
+        font-size: 10px;
+    }
+    .panel_body_small_shopping_card_view .p_rel {
+        width: 98%;
+    }
+    .shipping_info_cls {
+        border-left: none;
+    }
+    #ach_confirm .postal-total-payment {
+
+        text-align: center !important;
+    }
+    #ach_confirm .btn-blue-bold{
+        float: none !important;
+
+
+    }
+
+    .w100pr_resp{
+        width: 100%;
+    }
+	.left-nav ul {
+    height: 123px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#seals > img:nth-child(1) {
+    max-width: 23px;
+}
+    .merchants-cards .col-md-3 {
+        height: 170px;
+    }
+    .likeBox{
+        width: 100% !important;
+    }
+    .confirmLoading{
+    float: right;
+    margin-left: 3px;
+    margin-top: 15px;
+    }
+.clb{
+clear:both;	
+	}
+
+}
+
+@media (max-width:768px){
+
+    .navbar-toggle {
+        top: 9px;
+        background-color: #313c49;
+    }
+	
+	
+.gird_two{
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+	}	
+		
+.grid_one{
+    float: left;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+	}
+	
+.gird_merchant{
+width:100%;
+max-width:none;
+margin-bottom:15px;	
+	}
+	
+.gird_merchant{
+width:100%;
+max-width:none;
+margin-bottom:15px;	
+	}
+	
+		
+.btn-blue	{
+width:100%;	
+	}
+.grid_one img{
+width:auto;
+height:auto;
+	}		
+	
+.navbar-collapse{
+	background-color: #313C49;
+    margin-top: 8px;
+    position: relative;
+    z-index: 22;	
+	}
+.navigation-2 li a {
+    font-size: 15px;
+    padding: 7px 0;
+    text-align: center;
+    width: auto;
+	border-radius:0 !important;
+}	
+.navbar-toggle{
+	position:absolute;
+	top:17px;
+	right:0;
+	}
+	
+.heading-1{
+text-align:center;	
+	}
+.navigation li a{
+	font-size:12px;
+	}
+	
+.block-1{
+	padding-left:0;
+	padding-top: 150px;
+	}	
+
+.cvs{
+	display: table;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+	}
+	.question-section .btn {
+    display: block;
+    margin: 15px auto 0;
+}
+#like_box .col-md-2{
+        width: 176px;
+    }
+#like_box.likeBox .col-md-2{
+        width: 176px;
+    }
+	.white_box5{
+	width:100%;	
+		}
+	.white_box5_top {
+    width: 100%;
+}
+#trade_more_lbl {
+    font-size: 15px;
+}
+
+#step1From .field2 {
+    width: 190px;
+}
+.field1 {
+    width: 190px;
+}
+}
+
+@media (max-width:745px){
+    .merchant_cls{
+       width:100%;
+       margin-bottom: 15px;
+    }
+    .field1{
+       width:100%;
+    }
+    .field2_cls{
+       float:none;
+       width:100%;
+    }
+    .field2{
+        width:100%;
+        margin: 0 0 15px 0;
+    }
+    .setps-section i {
+        width: 50px;
+        height: 58px;
+    }
+    .setps-section div {
+        width: 50px;
+
+    }
+
+    .setps-section img {
+        margin: -188px 15px 0;
+        width: 53px;
+    }
+    .setps-section div label {
+        font-size: 8px;
+        left: -37px;
+     }
+    .options-block img {
+        width: 80px;
+    }
+    .options-block {
+        min-height: 243px;
+    }
+    .heading-3{
+       font-size: 30px;
+
+    }
+    .option_block_wrapper_{
+       margin-top: 45px;
+
+    }
+
+    .question-section {
+        font-size: 16px;
+
+    }
+    .question-section strong {
+        font-size: 16px;
+    }
+    .btn-big {
+        clear: both;
+        font-size: 15px;
+        height: 37px;
+        width: 142px;
+    }
+
+    .cards_details_append .row {
+        line-height: 8px;
+    }
+    .cards_details_append .row_haed_cand {
+        font-size: 8px;
+        font-weight: 800;
+    }
+    .cards_details_append {
+        font-size: 8px;
+    }
+
+    .cards_details_append .form-control {
+         font-size: 8px;
+        height: 23px;
+    }
+    .cards_details_append .col-xs-1 > img {
+        width: 16px;
+    }
+    .cards_details_append  .col-xs-1_cls{
+       display: none;
+    }
+    .cards_details_append .col-xs-2 {
+        line-height: 10px;
+        width: 25%;
+    }
+    .cards_details_append .btn{
+       font-size: 8px;
+
+    }
+
+    .above-section {
+        padding: 20px;
+        position: relative;
+    }
+    .quick-buy-section label {
+        clear: both;
+        display: block;
+        float: left;
+        font-size: 11px;
+        margin: 0 0 10px;
+        position: unset;
+        width: 100%;
+    }
+    .above-section input, .above-section select {
+        font-size: 10px;
+        margin: 0 0 10px;
+        width: 100% !important;
+    }
+    .quick-buy-section a {
+        float: left;
+        font-size: 11px;
+        margin: -5px 10px 15px 3px;
+    }
+    .above-section > span {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    #advance_searach_box .form-control {
+        width: 100% !important;
+    }
+    .below-section .block {
+        width: 100% !important;
+    }
+    .below-section .block .pull-right{
+       float: none; !important;
+       width:100%;
+    }
+    #advance_searach_box a {
+        margin: 6px 10px 15px 3px;
+    }
+    .cart-section {
+        width: 100%;
+    }
+    .summary-section {
+        width: 100%;
+    }
+    .card-cart-block section {
+        width: 197px;
+    }
+    .cart-section {
+        border-right: medium none;
+        float: left;
+        min-height: 250px;
+    }
+	#step1From .field2 {
+    margin-left: 5px;
+    width: 100%;
+}
+
+
+}
+
+
+@media (max-width:640px){
+
+.heading-1 {
+    font-size: 23px;
+}
+ .merchants-cards .col-md-3 {
+        height: 145px;
+    }
+#like_box .col-md-2 {
+    width: 197px;
+}
+#append_more > h1.youroffer{
+font-size: 30px;	
+	}
+.youroffer_p{
+font-size: 19px;	
+	}	
+.mailcard_discount{
+font-size:15px;
+text-align:left;
+	
+	}
+#trade_more_lbl {
+    font-size: 10px;
+}	
+}
+
+@media (max-width:570px){
+.footer_box{
+	width:100%;
+	}	
+.logo img{
+	width:100px;
+	}
+.credit-cards img{
+	width:30px;
+	}		
+}
+@media (max-width:550px){
+header {
+    height: 70px;
+}
+.navbar-brand > img {
+    margin-top: -1px;
+}
+.navbar-toggle {
+    top: 21px;
+
+}
+.select_box,.textfield{
+    width: 130px;
+	margin-bottom:20px;
+	font-size: 12px;
+}
+.link-2,.link-1 {
+    font-size: 11px;
+    padding: 10px 0;
+    width: 150px;
+}
+ .navbar-collapse {
+    margin-top: 8px;
+}
+    .navbar-brand img {
+        height: auto;
+        width: 97px;
+    }
+    .navbar-brand {
+        padding-top: 34px;
+    }
+    #step3From_Login a {
+        margin-bottom: 17px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .merchants-cards .col-md-3 {
+        width: 50%;
+        height: 185px;
+    }
+}
+
+@media (max-width:400px){
+.heading-1 {
+    font-size: 17px;
+}
+  .select_box, .textfield {
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    width: 220px;
+}
+.select_box select {
+
+}
+.link-2, .link-1 {
+    font-size: 9px;
+    padding: 9px 0;
+    width: 122px;
+}
+    .account_cls {
+        margin-top: 7px;
+    }
+    .setps-section img {
+        margin: -193px 15px 0;
+        width: 36px;
+    }
+    .get_cash {
+        font-size: 8px;
+    }
+    .get_cash_gray {
+        font-size: 8px;
+    }
+    .white_box_head strong {
+        font-size: 13px;
+    }
+    .row_head_wb div {
+        font-size: 7px;
+    }
+    .row_wb div{
+        font-size: 8px;
+    }
+    .row_wb div.cell1 img {
+        float: left;
+        height: auto;
+        margin-top: 10px;
+        width: 26px;
+    }
+    #append_more .btn{
+
+        font-size: 8px;
+    }
+    .white_box_head{
+        font-size: 8px;
+    }
+    .label-badge {
+        font-size: 8px;
+    }
+    .alert-success2 {
+         font-size: 12px;
+    }
+    .search-section label label {
+        font-size: 7px;
+   }
+    #trade_more_lbl {
+        font-size: 6px;
+    }
+    .btn-dark {
+        background: none repeat scroll 0 0 #3c4d67;
+        color: #fff !important;
+        font-family: "Open Sans";
+        font-size: 9px;
+        font-weight: 700;
+        height: 28px;
+        width: 138px;
+    }
+    .paid-block span {
+        font-size: 8px;
+    }
+	.or_img{
+	display:none;	
+		}
+	#trade_more_lbl {
+    font-size: 5px;
+    margin-left: 3px;
+}
+
+
+.white_box5_top .row_head_wb div.cell4.active,
+.white_box5_top .row_head_wb div.cell5.active
+ {
+    font-size: 9px !important;
+    line-height: 13px !important;
+}
+
+.zocial{
+    background-image: url("../images/icons.gif");
+    background-repeat: no-repeat;
+    background-size: 249% auto;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    margin-left: 12px;
+    margin-top: 11px;
+    width: 31px;
+}
+
+.zocial.paypal-icon {
+    background-position: 0 -37px;
+}	
+	
+ .zocial.home {
+    background-position: 0 -76px;
+} 
+.zocial.trade-icon {
+    background-position: 0 -119px;
+}
+.active_Opt .zocial.paypal-icon {
+    background-position: -42px -37px;
+}
+.active_Opt .zocial.envelope {
+    background-position: -42px 7px;
+}
+.active_Opt .zocial.trade-icon {
+    background-position: -42px -119px;
+}
+.active_Opt .zocial.home {
+    background-position: -42px -76px;
+}
+
+.cards_left {
+    width: 191px;
+}
+.cards_right {
+    background-position: -237px -233px;
+    width: 190px;
+  }
+
+.cards_right_split {
+    background-position: -40px center;
+    width: 199px;
+}
+.cards_right.active_gc {
+    background-position: -238px 0 !important;
+}
+.signature strong, .date strong {
+ width: 70px;
+}
+#step1From .field2,#step1From .field1{
+ font-size: 11px;
+}
+}
+
+@media (max-width:360px){
+.logo img {
+    width: 80px;
+}
+.credit-cards img {
+    width: 23px;
+}
+    .setps-section div {
+        width: 33px;
+    }
+    .setps-section i {
+        height: 49px;
+        width: 33px;
+    }
+    .setps-section div label {
+        font-size: 8px;
+        left: -26px;
+        line-height: 10px;
+    }
+    .merchants-cards .col-md-3 {
+        width: 100%;
+    }
+    #grid_view_ .col-md-3 img {
+        max-width: 87%;
+        width: 100%;
+    }
+    #grid_view_ p {
+        text-align: center;
+        width: 100%;
+    }
+    #grid_view_ h4 {
+        text-align: center;
+    }
+    .card_img_ {
+        text-align: center !important;
+    }
+    .left-nav {
+
+        min-height: 195px;
+    }
+#like_box .col-md-2 {
+    width: 200px;
+    float: none;
+    margin: 0 auto;
+}
+@media (max-width:335px){
+.link-2, .link-1 {
+    font-size: 7px;
+    margin: 0;
+    padding: 9px 0;
+    width: 107px;
+}
+
+
+
+
+}

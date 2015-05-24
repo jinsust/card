@@ -1,0 +1,246 @@
+
+<div class="loading_section" id="loader" style="display:none;"><img class=" " alt="" src="/static/img/sell/ajax-loader (17).gif" style="margin-top:300px;"></div>
+<div class="pull-left w_100pr m_t_90">
+    <div class="container">
+      <div class="col-md-4">
+          <h1 class="heading-3 w_100pr m_t_90 m_b_40"> Sell Gift Cards</h1>
+      </div>
+      <div class="col-md-8">
+         <div class="septs-section">
+            <img src="/static/img/sell/step1.jpg" alt="" >
+         </div> 
+      </div>
+    </div>
+</div>
+
+
+<div class="alert alert-blue">
+    <a href="javascript:" onclick="balanceInquiry()" style="text-decoration: none; color: #FFF">
+      <strong> Don't know gift card value?</strong> No worries! Continue to the next step and we will check the balance for you.
+    </a>
+</div>
+
+<!-- ****************** [Show]Main form: Brand, Balance, Qty -->
+    <form class="appnitro" role="form" id="step1Firststep" name="step1Firststep" method="post">
+
+          <input type="text" id="user_session" name="user_session" value="7320152434319" style="display:none">
+          <div class="pull-left w_100pr add-card-section" id="step1From">
+              <!-- <span id="offer_1">                                         
+                      <input type="button" id="bulkOffer" onClick="bulkPopup(1)" class="btn btn-info2 pull-left" value="Lots of Gift Cards to Sale? Click Here" style="width: 240px; margin-right: 14px;">
+              </span> -->
+              <div class="pull-left merchant_cls" id="merchant_quest">
+                  <input id="merchantid_1" name="name[]" onkeyup="selectMerchant(1);" class="form-control text-field field1 ui-autocomplete-input ui-autocomplete-loading" placeholder="What Brand Gift Card do you have?" autocomplete="off">
+                  <div id="quest_1" style="display: none;"></div>
+                  <div id="merchant_required" class="merchant_required"> Please select a merchant!</div>
+              </div>   
+
+    <!--           <div class="pull-left merchant_cls" id="merchant_quest">
+                   <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>           
+              </div>   -->
+
+              <input type="hidden" name="merchant[]" id="project-id_1" value="540">
+              <input type="hidden" name="ecodes_percentage[]" id="ecodes_percentage_1" value="85">
+              <input type="hidden" name="buyback_percentage[]" id="buyback_percentage_1" value="90">
+              <input type="hidden" name="tradeOffer" id="tradeOffer">
+                     
+              <div style="float: left;" class="field2_cls">
+                   <input id="face_value_1" name="face_value[]" onblur="checkNaN(this.value);" type="text" maxlength="255" value="" class="form-control text-field field2 field2ncc" placeholder="What&#39;s the balance on the Gift Card?">
+                   <div id="err_div" style="float: left;margin: 0 0 0 15px; width: 210px; font-size: 10px; color: red;clear: both"></div>
+             </div>
+
+              <label class="quantity-label"> QTY</label>
+
+<div class="spinner">
+        <input id="quantity_1" name="card_quantity[]" type="text" value="1" placeholder="Enter Qty" class="spinner_class field2" readonly=""></div>
+      
+              <span id="offer_1">   
+                  <input type="button" value="GET OFFER" class="btn btn-info2n pull-right" onclick="formSubit();" id="add_Card">
+              </span>
+                  
+              <div style="clear:both;" class="m_t_10 f_red" id="message_1"></div>
+        </div>
+    </form>
+<!-- ****************** [Show]Main form: Brand, Balance, Qty END -->        
+
+
+    <section id="display_n" style="display: block;">
+       
+
+    <form class="appnitro" role="form" id="step1Form" name="step1Form" method="post"> 
+      <!-- <input type="submit" onclick="sort()" value="SORTING"> -->
+          <div id="appendme" class="row" style="margin-top: 50px">
+            <div class="col-md-12 m_t_15 clb">
+
+              <!-- Col-12  左边block-->
+              <div id="append_more" class="col-md-6 append_more_cls clb">
+                  <h1 class="youroffer" id="defaultOffer">Your Offer: $$</h1>             
+                  <h1 class="youroffer" id="mailOffer" style="display:none">Your Offer: $</h1>
+                  <h1 class="youroffer" id="onlineOffer" style="display:none">Your Offer: $</h1>
+                  <p class="youroffer_p">
+                      You can adjust your offer by <br>
+                      changing the options on right
+                  </p>            
+                  <div class="white_box5_top">
+                    <div class="row_head_wb" style="min-height: 41px; border-bottom: 0px none;">
+                                <div class="cell1">&nbsp;</div>
+                                <div class="cell2">&nbsp;</div>
+                                <!--<div class="cell3"></div>-->
+                                <div class="cell4" id="cellFirst" style="font-size:12px; line-height:16px;"></div>    
+                                <div class="cell5" id="cellSecond" style="font-size:12px; line-height:16px;"></div>
+                                <div class="cell6">&nbsp;</div>
+                            </div>
+                  </div>
+                  <div class="white_box5 ">
+                    <!--<div class="white_box_head"><strong>OFFER LIST</strong>
+                        <span class="pull-right" style="margin-right:10px;">
+                          <a class="btn" style="margin-right:10px;" id="getCash" onclick="getCash(1);" href="javascript:">GET CASH</a>-->
+                          <!--<a class="btn"  id="getCashCard" onclick="getCash(2)" href="javascript:">TRADE GIFT CARD</a>
+
+                          <p id="getCash" style="margin-right:10px;" class="pull-left get_cash_gray">GET CASH</p>
+                          <p id="getCashCard" class="pull-left get_cash">TRADE GIFT CARD</p>
+                        </span>
+                    </div>-->
+                      <div class="row_head_wb">
+                          <div class="cell1">QTY</div>
+                          <div class="cell2">Card</div>
+                          <!--<div class="cell3"></div>-->
+                          <div class="cell4">
+                            <span><img src="/static/img/sell/email_icon_card.png" width="" height=""></span>Mail Cards</div>    
+                          <div class="cell5"><span><img src="/static/img/sell/online_icon_card.png" width="" height=""></span>Enter Online</div>
+                          <div class="cell6">&nbsp; </div>
+                      </div>
+
+                      <div id="pleasefill" class="alert alert-info " style="display:none; font-size: 20px; text-align: center;">
+                        Please fill all the fields
+                      </div>
+                      <input type="hidden" id="total_cards_qty" name="total_cards_qty" value="0">
+
+                      <div id="shuffleId">   
+                      </div> <!-- // End of shuffleId -->
+                                  
+                      <div id="appendCards">
+                      </div>
+                      <!--<a href="#" class="btn btn-gray2 pull-right m_t_10  m_r_15" onclick="getFocus()"> ADD ADDITIONAL CARD</a>-->
+                      <div class="row_wb row-split">
+                          <div class="cell1">&nbsp;</div>
+                          <div class="cell2" style="text-align:right;padding-right:10px">Total:</div>
+                          <div class="cell4 ">$0</div>
+                          <div class="cell5 ">$0</div>
+                          <div class="cell6 ">&nbsp;</div>
+                      </div>
+                  </div> <!-- End of white_box 1-->
+                  <p class="mailcard_discount">You can get up to 5% more by trading your card- <br>
+                        the MAIL CARD option must be selected</p>
+            </div>
+
+
+            <!-- Col-12  右边block--> 
+            <div class="col-md-6 append_more_cls clb">
+                 
+                <div class="panel panel-primary panel-primary3">
+                     <div class="panel-heading" style="margin-left: -1px; margin-top: -1px; margin-right: -1px;"><h4 class="panel-title">Adjust your offer using the following options:</h4></div>
+                <div class="panel-body">
+                
+                <div class="">
+                <div class="white_box white_box3">
+                      <span class="step1_cls">STEP 1</span>
+                      <div class="white_box_head"> HOW WOULD YOU LIKE TO SUBMIT YOUR CARDS?</div>
+                      <div class="white_box_body" id="no_split">
+
+                          <input type="hidden" id="cashVal" name="cashVal" value="0">
+                          <input type="hidden" id="paypalVal" name="paypalVal" value="0">
+
+
+                          <label>
+                              <div class="cards_left" id="mailOpt">
+                              <img src="/static/img/sell/or.png" width="35" height="23" class="or_img">
+                              
+                              <input id="payment_mail" type="radio" value="1" name="payment_option" onclick="main_online(1)" class="radio_btn_gc" style="visibility: hidden">
+                                  <div class="offer_wb">OFFER: <!--<span name="getcashValStatic" style="display: none">Up to </span>-->$<span id="get_paid_more">0</span></div>
+                              </div>
+                          </label>
+                          <label>
+                              <div class="cards_right" id="onlineOpt">
+                                  
+                                      <input id="payment_online" type="radio" value="2" name="payment_option" onclick="main_online(2)" class="radio_btn_gc" style="visibility: hidden">
+                                      
+                                  <div class="offer_wb">OFFER: <!--<span name="getpaypalValStatic" style="display: none">Up to </span>-->$<span id="get_paid_faster">0</span></div>
+                              </div>
+                          </label>
+
+                      </div>  <!-- End of white_box_body -->
+                      <div class="white_box_body" id="split" style="display: none">
+                          <input type="hidden" id="cashVal" name="cashVal" value="0">
+                          <input type="hidden" id="paypalVal" name="paypalVal" value="0">
+                          <label>
+                              <div class="cards_left_split" id="mailOpt_split">
+                                  <input id="payment_mail_split" type="radio" value="1" name="payment_option" onclick="main_online(1)" class="radio_btn_gc" style="visibility: hidden">
+                                  <div class="offer_wb">OFFER: <span name="getcashValStatic" style="display: none;">Up to </span>$<span id="get_paid_more_split">0</span></div>
+                              </div>
+                          </label>
+                          <label>
+                              <div class="cards_right_split" id="onlineOpt_split">
+
+                                      <input id="payment_online_split" type="radio" value="2" name="payment_option" onclick="main_online(2)" class="radio_btn_gc" style="visibility: hidden">
+
+                                  <div class="offer_wb">OFFER: <span name="getpaypalValStatic" style="display: none;">Up to </span>$<span id="get_paid_faster">0</span></div>
+                              </div>
+                          </label>                         
+                    </div>   
+                </div>  
+                <!-- End of white_box 3 up-side: STEP1 area  选择邮寄或者online -->
+                 
+                 
+              
+             <div class="white_box white_box3 m_t_80">
+             <span class="step1_cls">STEP 2</span>
+                  <div class="white_box_head">  HOW WOULD YOU LIKE TO GET PAID?</div>
+                  
+                  <div id="payment_type_div" class="pull-left w_100pr" style="opacity: 0.4;">
+                  <table class="table  m_b_10">
+                    <tbody id="upperHtmlData">
+
+                   <tr><td id="paypal_payment_TD" style="text-align: left; vertical-align: middle;"><label style="margin: 0 !important; display: block;" class="paid-block"><span style="float: left;  "> <i class="zocial paypal-icon"></i></span><div id="paypal_payment_div1" style="margin-top: 10px;"><label id="paypal_payment_lbl"><input type="radio" onclick="revertTrade()" style="visibility: hidden" value="paypal_payment" name="payment_type" id="paypal_payment" disabled="disabled"> PayPal Payment </label><span class="pull-right m_t20"> </span><input type="hidden" value="1" name="payment_type_status" id="paypal_payment_status"><input type="hidden" value="1" name="status[]" id="paypal_payment"><input type="hidden" value="" name="payment_type_message" id="paypal_payment_message"><input type="hidden" value="0" name="extra_percentage[]" id="paypal_payment"></div></label></td><td id="ach_deposit_TD" style="text-align: left; vertical-align: middle;"><label style="margin: 0 !important; display: block;" class="paid-block"><span style="float: left;  "> <i class="zocial  home"></i></span><div id="ach_deposit_div1" style="margin-top: 10px;"><label id="ach_deposit_lbl"><input type="radio" onclick="revertTrade()" style="visibility: hidden" value="ach_deposit" name="payment_type" id="ach_deposit" disabled="disabled"> ACH Deposit </label><span class="pull-right m_t20"> </span><input type="hidden" value="4" name="payment_type_status" id="ach_deposit_status"><input type="hidden" value="4" name="status[]" id="ach_deposit"><input type="hidden" value="" name="payment_type_message" id="ach_deposit_message"><input type="hidden" value="0" name="extra_percentage[]" id="ach_deposit"></div></label></td></tr><tr><td id="mail_check_TD" style="text-align: left; vertical-align: middle;"><label style="margin: 0 !important; display: block;" class="paid-block"><span style="float: left;  "> <i class="zocial   envelope"></i></span><div id="mail_check_div1" style="margin-top: 10px;"><label id="mail_check_lbl"><input type="radio" onclick="revertTrade()" style="visibility: hidden" value="mail_check" name="payment_type" id="mail_check" disabled="disabled"> Mailed Check </label><span class="pull-right m_t20"> </span><input type="hidden" value="1" name="payment_type_status" id="mail_check_status"><input type="hidden" value="1" name="status[]" id="mail_check"><input type="hidden" value="" name="payment_type_message" id="mail_check_message"><input type="hidden" value="0" name="extra_percentage[]" id="mail_check"></div></label></td><td id="trade_more_TD" style="text-align: left; vertical-align: middle;"><label style="margin: 0 !important; display: block;" class="paid-block"><span style="float: left;  "> <i class="zocial trade-icon"> </i></span><div id="trade_more_div1" style="margin-top: 10px;"><label id="trade_more_lbl"><input type="radio" onclick="getCash(2)" style="visibility: hidden" value="trade_more" name="payment_type" id="trade_more" disabled="disabled"> Trade &amp; get paid more </label><span class="pull-right m_t20"> </span><input type="hidden" value="4" name="payment_type_status" id="trade_more_status"><input type="hidden" value="4" name="status[]" id="trade_more"><input type="hidden" value="" name="payment_type_message" id="trade_more_message"><input type="hidden" value="0" name="extra_percentage[]" id="trade_more"></div></label></td></tr></tbody>
+               </table>
+              </div>
+            </div> 
+            <!-- End of white_box 3 Middle-side; Step2 area: 选择支付方式-->
+
+
+            <!--  当选择兑换Amazon卡片时展示 -->
+              <div id="trade_options" class="pull-left display_none w_100pr white_box white_box3 m_t20 p_t_0 p_l_9" style="display: block;">
+                <div class="amzLegal">
+                  <h1>Amazon Legal</h1>
+                  <p>Amazon.com Gift Cards ("GCs") sold by CardCash, Inc., an authorized and independent reseller of Amazon.com Gift Cards. Except as required by law, GCs cannot be transferred for value or redeemed for cash. GCs may be used only for purchases of eligible goods on Amazon.com or certain of its affiliated websites. For complete terms and conditions, see <a href="http://www.amazon.com/gc-legal">www.amazon.com/gc-legal.</a> GCs are issued and © 2012 by ACI Gift Cards, Inc., a Washington corporation. ©,®,TM Amazon.com Inc. and/or its affiliates.</p>
+                </div>
+                <table class="w_100pr">
+                      <tbody id="belowHtmlData">
+                    
+                    <tr><td style="text-align: left; vertical-align: middle;" id="trade_amazon_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i><img class="amazonOffer" src="/static/img/sell/amazon.png"></i></span><div id="trade_amazon_div1" style="margin-top: 10px;"><label id="trade_amazon_lbl"><input onclick="setactive()" type="radio" style="visibility: hidden" value="trade_amazon" name="tradeType" id="trade_amazon"> Amazon gift card </label><span class="pull-right m_t20 m_r_10" id="trade_amazon_span">$ 0.00 </span><input type="hidden" value="1" name="tradeType_status" id="trade_amazon_status"><input type="hidden" value="1" name="status[]" id="trade_amazon"><input type="hidden" value="4" name="extra_percentage[]" id="trade_amazon"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="trade_cvs_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i> <img class="cvsOffer" src="/static/img/sell/cvs-icon.png"></i></span><div id="trade_cvs_div1" style="margin-top: 10px;"><label id="trade_cvs_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="trade_cvs" name="tradeType" id="trade_cvs"> CVS cards </label><span class="pull-right m_t20 m_r_10" id="trade_cvs_span">Coming soon! </span><input type="hidden" value="0" name="tradeType_status" id="trade_cvs_status"><input type="hidden" value="0" name="status[]" id="trade_cvs"><input type="hidden" value="5" name="extra_percentage[]" id="trade_cvs"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="trade_united_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i><img class="unitedOffer" src="/static/img/sell/united.png"></i></span><div id="trade_united_div1" style="margin-top: 10px;"><label id="trade_united_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="trade_united" name="tradeType" id="trade_united"> United air miles </label><span class="pull-right m_t20 m_r_10" id="trade_united_span">Coming soon! </span><input type="hidden" value="0" name="tradeType_status" id="trade_united_status"><input type="hidden" value="0" name="status[]" id="trade_united"><input type="hidden" value="6" name="extra_percentage[]" id="trade_united"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="trade_cardcash_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i>  <img class="cardcashOffer" src="/static/img/sell/carcash-icon.png"></i></span><div id="trade_cardcash_div1" style="margin-top: 10px;"><label id="trade_cardcash_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="trade_cardcash" name="tradeType" id="trade_cardcash"> CardCash gift cards </label><span class="pull-right m_t20 m_r_10" id="trade_cardcash_span">Coming soon! </span><input type="hidden" value="0" name="tradeType_status" id="trade_cardcash_status"><input type="hidden" value="0" name="status[]" id="trade_cardcash"><input type="hidden" value="6" name="extra_percentage[]" id="trade_cardcash"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="trade_staples_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i>  <img class="cardcashOffer" src="/static/img/sell/carcash-icon.png"></i></span><div id="trade_staples_div1" style="margin-top: 10px;"><label id="trade_staples_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="trade_staples" name="tradeType" id="trade_staples"> Staples </label><span class="pull-right m_t20 m_r_10" id="trade_staples_span">$ 0.00 </span><input type="hidden" value="3" name="tradeType_status" id="trade_staples_status"><input type="hidden" value="3" name="status[]" id="trade_staples"><input type="hidden" value="8" name="extra_percentage[]" id="trade_staples"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="tade_kevi_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i>  <img class="cardcashOffer" src="/static/img/sell/carcash-icon.png"></i></span><div id="tade_kevi_div1" style="margin-top: 10px;"><label id="tade_kevi_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="tade_kevi" name="tradeType" id="tade_kevi"> Kivis Kitchen </label><span class="pull-right m_t20 m_r_10" id="tade_kevi_span">$ 0.00 </span><input type="hidden" value="3" name="tradeType_status" id="tade_kevi_status"><input type="hidden" value="3" name="status[]" id="tade_kevi"><input type="hidden" value="4" name="extra_percentage[]" id="tade_kevi"></div></label></td></tr><tr><td style="text-align: left; vertical-align: middle;" id="trade_sammy_TD"><label style="margin: 0 !important; display: block; " class="paid-block"><span style="float: left; "> <i>  <img class="cardcashOffer" src="/static/img/sell/carcash-icon.png"></i></span><div id="trade_sammy_div1" style="margin-top: 10px;"><label id="trade_sammy_lbl" style="opacity: 0.4"><input disabled="disabled" onclick="setactive()" type="radio" style="visibility: hidden" value="trade_sammy" name="tradeType" id="trade_sammy"> Sammys Hack </label><span class="pull-right m_t20 m_r_10" id="trade_sammy_span">$ 0.00 </span><input type="hidden" value="3" name="tradeType_status" id="trade_sammy_status"><input type="hidden" value="3" name="status[]" id="trade_sammy"><input type="hidden" value="3" name="extra_percentage[]" id="trade_sammy"></div></label></td></tr></tbody>
+                  </table>  
+              </div>    
+          </div>
+
+          <!--Accept and Continue start-->
+          <div class="pull-right m_t_10 ">
+              <img class=" pull-left m_t_10 m_r_10" style="display:block;" id="loadingImg_1" src="/static/img/sell/ajax-loader (11).gif">
+ 
+              <!-- TO DO: change "a href" into onclick function -->
+              <a class="btn btn-dark " href="sell_card_step2.html" value="" type="button" onclick="checkValFunc()" id="mail-cards-btn"> ACCEPT AND CONTINUE </a>
+                         
+              <input class="btn btn-dark display_none" value="ACCEPT AND CONTINUE" type="button" data-toggle="modal" data-target="#myModal-2" id="online-cards-btn">
+          </div>
+          <!--Accept and Continue end-->        
+
+          </div><!--panel-primary3 end-->
+        </div><!--col-md-5 append_more_cls end-->            
+      </div> <!-- End of col-md-12 Div -->
+    </div>
+
+

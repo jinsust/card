@@ -1,0 +1,398 @@
+
+#github-ribbon {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999;
+}
+#msg {
+	line-height: 13px;
+	position: fixed;
+	width: 260px;
+	height: 28px;
+	padding-top: 12px;
+	left: 50%;
+	margin-left: -130px;
+	bottom: 0px;
+	text-align: center;
+	z-index: 500;
+	background-color: #2e639e;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	color: #FFFFFF;
+	font-size: 13px;
+}
+#msg div {
+	display: inline-block;
+}
+#msg .word {
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+#msg a {
+	color: #FFFFFF;
+	margin-left: 10px;
+}
+#msg a:hover {
+	text-decoration: none;
+}
+#msg a:hover .word {
+	text-decoration: underline;
+}
+#msg img {
+	vertical-align: bottom;
+}
+#msg div.scroll {
+	width: 12px;
+	height: 13px;
+	vertical-align: bottom;
+	background-image: url("../img/demo_arrow_scroll.png");
+}
+iframe.twitter-follow-button {
+	vertical-align: text-bottom;
+	margin: auto auto -1px 8px;
+}
+div#content-wrapper {
+
+margin-top: 215px;
+margin-left: 400px;
+
+}
+html.touch div#content-wrapper {
+
+}
+.scrollContainer {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	min-width: 650px;
+	width: 100%
+}
+.scrollContent {
+	position: relative;
+	/*height: 100%;*/
+}
+section {
+	height: 100%;
+}
+
+section#start {
+
+}
+
+
+.spark {
+	position: absolute;
+}
+.spark.s0 {
+	background-image: url("../img/demo_spark1.png");
+	width: 4px;
+	height: 3px;
+}
+.spark.s1 {
+	background-image: url("../img/demo_spark2.png");
+	width: 6px;
+	height: 6px;
+}
+.spark.s2 {
+	background-image: url("../img/demo_spark3.png");
+	width: 8px;
+	height: 8px;
+}
+.spark.s3 {
+	background-image: url("../img/demo_spark4.png");
+	width: 11px;
+	height: 11px;
+}
+.spark.s4 {
+	background-image: url("../img/demo_spark5.png");
+	width: 13px;
+	height: 13px;
+}
+.spark.s5 {
+	background-image: url("../img/demo_spark6.png");
+	width: 17px;
+	height: 17px;
+}
+.wand,.wand2,.wand3,.wand4 {
+    border-radius: 23px;
+    position: absolute;
+}
+.wand5, .wand6, .wand7 {
+		position: absolute;
+	}
+.wand6b	{
+	position: absolute;
+	z-index:23;
+	}
+.wand7b, .wand7c {
+		position: absolute;
+		z-index: 15;
+	}
+.wand7{
+z-index:16;
+position: absolute;
+
+	}
+.wand6fx{
+z-index:19;
+position: absolute;	
+	}
+.wand7fx{
+z-index:18;
+position: absolute;		
+	}	
+.wand6{
+z-index:15	
+	}
+.wand5{
+z-index:14	
+	}	
+.wand{
+z-index:13	
+	}
+.wand2{
+z-index:12	
+	}
+.wand3{
+z-index:11
+	}
+.wand4{
+z-index:10
+	}			
+.sparkpoint {
+	position: absolute;
+}
+
+/*START*/
+
+
+#intro {
+    display: block;
+    height: 800px;
+    left: 85%;
+    margin: -200px auto auto -325px;
+    position: absolute;
+    top: 121%;
+}
+
+
+
+
+
+
+#parallax {
+	margin-bottom: 250px;
+	position: relative;
+	overflow: hidden;
+}
+#parallax h3 {
+	font-size: 80px;
+	text-align: center;
+	margin: -40px 0 0 0;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	line-height: 80px;
+}
+#parallax #parallaxbg {
+	position: absolute;
+	height: 300px;
+	top: 50%;
+	width: 100%;
+	margin-top: -150px;
+	background-image: url("../img/demo_parallax_bg.png");
+}
+#parallaxbg .top {
+	height: 10px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background-image: url("../img/demo_parallax_shadow_top.png");
+}
+#parallaxbg .bottom {
+	height: 10px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-image: url("../img/demo_parallax_shadow_bottom.png");
+}
+
+
+#speechbubble p {
+	margin: 0;
+	text-align: center;
+	line-height: 22px;
+	color: #2e639e;
+}
+#speechbubble p:first-child {
+	font-size: 24px;
+	margin-top: 23px;
+}
+#speechbubble p:last-child {
+	font-size: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+a:hover #speechbubble p:last-child {
+	text-decoration: underline;
+}
+/*html.touch body {
+	font-size: 25px;
+}*/
+html.touch #info #hatcontainer {
+	margin-bottom: 260px;
+	height: 300px;
+	width: 240px;
+}
+html.touch #info #hatcontainer .hat {
+	left: 90px;
+}
+html.touch #info #hatcontainer #bunny {
+	left: 110px;
+}
+html.touch #info #hatcontainer #speechbubble {
+	left: -20px;
+	top: 35px;
+}
+html.touch #info ul.nexttohat {
+	padding-left: 240px;
+}
+
+
+.spacer.s2 {
+    min-height: 200px;
+}
+.spacer.s1 {
+    min-height: 100px;
+}
+
+.spacer.s0 {
+    min-height: 1px;
+}
+
+.red {
+    background-color: #cf3535;
+}
+.box1 {
+    height: 100px;
+    margin: 0 auto;
+    max-width: 100px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.green {
+    background-color: #00af10;
+}
+
+.box1, .box2, .box3 {
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pouch{
+    position: absolute;
+    top: 300px;
+    z-index: 5;
+	}
+.pouch2{
+    position: absolute;
+    top: 330px;
+    z-index: 24;
+	
+	}	
+	
+.pouch_wrapper {
+    height: 550px;
+    left: -76px;
+    overflow: hidden;
+    position: absolute;
+    top: 502px;
+    width: 428px;
+}	
+
+
+
+	
+.cards_tow{
+position:absolute;
+z-index:19;	
+	}
+	
+.cards_three{
+position:absolute;
+z-index:20;		
+	}	
+.cards_four	{
+position:absolute;
+z-index:21;	
+	}
+.cards_five	{
+position:absolute;
+z-index:22;		
+	}
+	
+#anim_buy {
+    height: 731px;
+    margin-top: -50px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}	
+
+
+
+#info .wand{
+z-index:22;
+top:300px;	
+	}
+#info .wand2{
+z-index:21;
+top:300px;	
+	}
+#info .wand3{
+z-index:20;
+top:300px;	
+	}
+#info .wand4{
+z-index:19;
+top:300px;	
+	}
+	
+	
+	
+#info .wand5{
+z-index:24;
+top:100px;
+	}
+	
+	
+#info .wand6{
+z-index:17;
+top:100px;
+	}
+#info .wand7{
+z-index:15	
+	}	
+	
+#content-wrapper	img{
+	
+	}
+
+@media (max-width: 1024px) {
+    #anim_buy {
+        width: 111%;
+    }
+}
+
+@media (max-width: 992px) {
+    #content-wrapper {
+        display: none;
+    }
+    #anim_buy {
+        display: none;
+    }
+}

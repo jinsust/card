@@ -1,0 +1,1962 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class=" js no-touch">
+
+<!--  ************************** Header **************************** -->
+<head onload="steSession()">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <title>礼品卡交易系统</title>
+    <meta name="description" content="提供将闲置的礼品卡置换成现金的交易平台，同时出售多种类礼品卡" />
+    <meta name="Keywords" content="礼品卡，现金，出售，购买，折扣" /> 
+    <meta name="author"   content="北瑾青年" >
+    <link rel="shortcut icon" href="../img/icon.png">
+    <script async="" src="../card_files/gtm.js"></script><script async="" src="../card_files/analytics.js"></script><script type="text/javascript" src="../card_files/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" rel="stylesheet" href="../card_files/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../card_files/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="../card_files/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="../card_files/style.css">
+    <link type="text/css" rel="stylesheet" href="../card_files/style-offer.css">
+    <link type="text/css" rel="stylesheet" href="../card_files/responsive.css">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../fonts/font-awesome.min.css" rel="stylesheet",type="text/css">
+    <link href="../css/my-addition.css" rel="stylesheet">    
+    <script type="text/javascript" src="../js/buy.js"></script>
+    <script type="text/javascript" src="../js/buy_step2.js"></script>
+
+<script type="text/javascript"> 
+  fetchCardTypes();
+</script>
+
+</head>
+
+
+
+<!-- ***************************** Body ************************************ -->
+<body>
+
+<!-- Include the view file for the current controller/route -->
+<script type="text/javascript" src="../card_files/all.two.js"></script>
+<script type="text/javascript" src="../card_files/all.js"></script>
+<script type="text/javascript" src="../card_files/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../card_files/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="../card_files/iscroll.js"></script>
+<script type="text/javascript" src="../card_files/jquery.scrollmagic.min.js"></script>
+<script type="text/javascript" src="../card_files/demo.js"></script>
+<link href="../card_files/style.css" rel="stylesheet">
+
+
+
+
+
+<!-- ******** Navbar fixed Start ********** -->
+<div class="header-home">
+  <div class="container" style="padding:0;">
+      <div class="navbar navbar-inverse " role="navigation">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="../index.html"><img src="../card_files/logo.png"></a>
+          <div class="search-box">
+              <i class="glyphicon glyphicon-search"></i>
+              <input type="text" id="CardsSearchField" placeholder="搜索：输入礼品卡关键字" class="form-control ui-autocomplete-input" autocomplete="off" autofocus="" style="font-style: normal;">
+          </div>
+      </div>
+           
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-left" style="margin-top: 20px; margin-left:20px">
+              <li><a href="../buy_card.html">购买礼品卡</a></li>
+              <li class=""><a href="../sell_card.html">出售礼品卡</a></li>
+              <li><a href="../help.html">帮助</a></li>
+              <!-- <li class="helpie8"><a href="/help">helpIE8</a></li> -->
+          </ul>
+
+          <div class="pull-right">
+              <div class="top-login-links2">
+                      <ul>                         
+                         <li><span class=" p_rel "> <a href="https://new.cardcash.com/login" class="">登录</a></span></li>
+                        
+                         
+                        <li><span class=" p_rel "> <a href="https://new.cardcash.com/cart/" class="cart-link dropdown-toggle" onclick="fetchCart()"><img src="../card_files/card_cash.png">购物车 <span class="badge2" style="font-size: 10px;">0</span></a> </span></li>
+                      </ul>
+                </div>
+            </div>
+      </div>
+      </div>
+  </div>
+</div>
+<!-- ******** Navbar fixed End ********** -->
+
+
+
+<div class="top-nav-linker">
+  <div class="container">
+    <div class="pull-left"><a href="../index.html"> Home </a> / <a href="javascript:void(0)" class="active">Buy Discount Gift Cards</a></div>
+    <div class="pull-right results-shown"><strong>Showing </strong> 548 Results</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- ************************************* Main Area ****************************************** -->
+<script src='/js/buy.js?3a5cb4223669771b687e431af45b29f4'></script>
+<script src='/js/jquery.tablesorter.min.js'></script>
+
+<script>
+jQuery(document).ready(function($){
+  
+
+
+   fetchCartStatus();
+  $("#myTable").tablesorter();
+
+  $("#myTable thead th").click(function(){
+    $(".showdetail").remove();
+    var html = '';
+      html += '<tr class="showdetail">';
+        html += '<td colspan="7">';
+          html += '<h4>Delivery & Redemption</h4>';
+          html += '<ul class="unstyled">';
+            html += '<li>This eGift card can be redeemed online.</li>';
+            html += '<li>This printable voucher can be redeemed on location.</li>';
+            html += '<li>This eGift + voucher will be delivered to your Card Cash account within 24 hours.</li>';
+            html += '<li>Please note, items purchased with a Home Depot gift card are final sale. </li> ';        
+          html += '</ul>';
+        html += '</td>';
+      html += '</tr>';
+    var numTr = 1;
+    var totaltr = 0;
+    $("#myTable tbody tr").each(function(){
+      totaltr++;
+      })
+    console.log("count",totaltr);
+      setTimeout(function(){
+         for(var i = 0; i< totaltr; i++)
+        { 
+           
+          $("table tbody tr:nth-child("+numTr+")").after(html)
+           numTr = numTr+2;         
+        } 
+      },100)
+      
+     
+      
+  });
+ 
+});
+
+function sortByPrice(mName, sort){
+  //alert(mName + '>>' +sort);  
+  window.location = '/buy-gift-cards/discount-' + mName.toLowerCase() + "-cards/?price=" + sort + '/' ;
+}
+function SortByType(mName, type){
+  window.location = '/buy-gift-cards/discount-' + mName.toLowerCase() + "-cards/?type=" + type + '/' ;
+}
+</script>
+ 
+ <div class="m_t_90  pull-left w_100pr"></div>
+<div class="top-nav-linker">
+  <div class="container">
+    
+    <div class="pull-left"><a href="/"> Home </a> / <a href="/buy-gift-cards">Buy Discount Gift Cards</a> / <a href="javascript:void(0)" class="active">Amc Theaters</a></div>
+   
+    
+
+      
+  
+          <div class="pull-right results-shown">
+         <strong>Showing </strong> 36 Results
+        </div>
+    
+
+    
+  </div>
+</div>
+<div class="pull-left w_100pr hideCart hideCart_cls ">
+  <div class="container">
+    <div class="pull-left w_100pr p_rel">
+ 
+ 
+      <div class="col-md-2 left-nav hidden-xs">
+                <div class="col-xs-5 col-md-12">
+        <div class="row space20"></div>
+        
+        <img src="https://s3.amazonaws.com/new-cardcash-images/images/merchants/AMC-Theaters.png" class="img-thumbnail m_t_20" alt="Amc Theaters gift card" />
+
+        
+                </div>
+                <div class="sidebar-text-block col-md-12">    
+        <!-- <h4>Card Description</h4> -->
+          <br/><p style="margin-left:3px;">Great news for all avid moviegoers: with our cheap gift card deals, you can now save money on your next trip to the big screen at AMC Theaters! Use these cards (which are valid at any AMC Theater) to save money on tickets so you don't feel as guilty about buying the popcorn to go with your movie.</p>      
+  <!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.</p> -->
+        </div>
+                <div class="col-xs-5 col-md-12">
+
+
+        
+        <h3>BY TYPE</h3>
+        <ul>
+      
+        <li class="">
+          <a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="SortByType('amc-theaters',1)">Physical Card</a>
+        </li>
+        
+        <li class="">
+          <a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="SortByType('amc-theaters',2)">Printable eCard</a>
+        </li>
+        
+        </ul>
+        <h3>BY PRICE</h3>
+            <ul>
+            <!--///////////////////// OLD FUCNTIONALITY ////////////////////////////////-->
+             <!--  <li class="undefined" ><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a href="/buy-gift-cards/discount-amc-theaters-cards/?price=25_under">$25 and under</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a href="/buy-gift-cards/discount-amc-theaters-cards/?price=25_50">$25-$50</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a> <a href="/buy-gift-cards/discount-amc-theaters-cards/?price=50_100">$50-$100</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a href="/buy-gift-cards/discount-amc-theaters-cards/?price=100_250">$100-$250</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a href="/buy-gift-cards/discount-amc-theaters-cards/?price=250_500">$250-$500</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a href="/buy-gift-cards/discount-amc-theaters-cards/?price=500_above">$500 and above</a></li> -->
+            <!--///////////////////// END OLD FUCNTIONALITY ////////////////////////////////-->
+          
+          <li class="undefined" ><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','25_under')">$25 and under</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','25_50')">$25-$50</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','50_100')">$50-$100</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','100_250')">$100-$250</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','250_500')">$250-$500</a></li>
+              <li class="undefined"><a href="/buy-gift-cards/discount-amc-theaters-cards/" class="cancle-icon"><img src="/images/cross-icon-2.png" ></a><a onclick="sortByPrice('amc-theaters','500_above')">$500 and above</a></li>
+            </ul>
+                    </div>
+
+
+        <div class="advertisement-col-1">
+          <span>Sell Amc Theaters <br>Gift Cards</span>
+          <form action="/sell-gift-cards/" method="post">
+            <input type="hidden" name="merID" value="184">
+            <input type="submit" value="SELL NOW" class="sendSell">
+          </form>
+        </div>
+
+<!--        <div class="sidebar-text-block">
+          <h4><img src="/images/van-icon.png" alt=""> Free shipping:</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.</p>
+        </div>
+        
+        <div class="row space10"></div>
+
+        <div class="sidebar-text-block">
+          <h4><img src="/images/icon-1.png" alt=""> Buyer protection guarantee</h4>  
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.</p>
+        </div> -->
+        <!--<div class="sidebar-text-block col-md-12">    
+         <h4>Card Description</h4>
+          <p>Great news for all avid moviegoers: with our cheap gift card deals, you can now save money on your next trip to the big screen at AMC Theaters! Use these cards (which are valid at any AMC Theater) to save money on tickets so you don't feel as guilty about buying the popcorn to go with your movie.</p>      
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed amet velit nemo ea vel, saepe debitis laborum non, ipsa placeat rerum exercitationem, doloremque sunt consequuntur error. Quo quis aut debitis.</p> 
+        </div>-->
+        
+        
+          
+      </div>
+
+            <div id="cartStatus" name="cartStatus" class="cartStatus"></div>
+
+      <div class="content-wraper col-md-8">
+
+
+        <div class="wrap-padding">
+        <h1 class="buy-heading"> Buy Amc Theaters Gift Cards
+          
+          <!-- <a href="#" class="btn btn-primary" data-target="#setAlerts" data-toggle="modal"><span class="glyphicon glyphicon-warning-sign"  ></span> Set Alerts </a> -->
+          
+        </h1>
+         
+
+        <div class="row space15"></div>
+
+
+        <div class="sort-block">
+          <p>
+             
+                        
+            
+            
+            
+
+            
+
+
+            
+
+            
+
+
+          </p>
+        </div>
+
+        <!-- Quick buy  -->
+<script type="text/javascript"> 
+  fetchCardTypes();
+</script>
+
+      <div class="quick-buy-section hidden-xs"  style="margin-bottom: 20px;">
+        
+        <form id="quickSearach" method="post"> 
+         <div class="quickbuy-descript"><label><i class="quick-buy3">Quick Buy</i><i class="reg3">&reg;</i></label>Know what you want? Use our QuickBuy&reg; tool for an instant purchase!</div><br/>
+          <div class="above-section">
+
+            <input type="hidden" id="merchant_id_field" name="merchant_name" value="184">           
+            <input type="hidden" placeholder ="Select Merchant" style="width:190px;" class="form-control quick-input-clr" name="selectMerchant" id="selectMerchant">
+            
+
+            <input type="text" class="form-control quick-input-clr"  placeholder="Select Dollar Value" style="width:165px;" name="amount"> <!--onkeyup="this.value=this.value.replace(/[^\d]/,'')"-->
+            <span id="optionSelect"></span>
+            <a href="javascript:" onclick="toggle_box('advance_searach_box')" style="margin-left:25px;"> Advanced</a>
+            <input type="submit" class="btn btn-search-blue m_l_5" value="CONTINUE">
+          </div>
+          <div class="below-section display_none" id="advance_searach_box">
+            <div class="pull-left  block m_b_10">
+              <div class="pull-right">
+              <span> Only want cards with value above</span>
+              <input type="text" class="form-control quick-input-clr" placeholder=" " style="width:120px;" name="value_above" id="value_above">
+              </div>
+            </div>
+            <div class="pull-left  block m_b_10">            
+              <div class="pull-right">
+              <span> Only want cards with value below</span>
+              <input type="text" class="form-control quick-input-clr" placeholder=" " style="width:120px;" name="value_below" id="value_below">
+              </div>
+            </div>
+            <div class="pull-left  block">
+              <div class="pull-right">
+              <span class="last"> Only want cards with discount % greater than: (eg 9%)</span>
+              <input type="text" class="form-control quick-input-clr" placeholder=" " style="width:120px;" name="discount" id="discount"> 
+              </div>
+            </div>
+            <a href="javascript:" onClick="clearAS()" >Clear</a>
+          </div>
+        </form>
+      </div>
+
+<script>
+jQuery(document).ready(function($){
+  
+  $("#tableData").bootstrapTable({
+    data: [
+   {
+      "id": 18925,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 1,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18927,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 1.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18937,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 2.04,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18950,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 3.56,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18958,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 4,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18941,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 4.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18943,
+      "merchant_id": 184,
+      "qty": "6",
+      "value": 5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18936,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18931,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 6,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18942,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 8.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18924,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 10,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18923,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 10,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18929,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 10.31,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18933,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 10.75,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18930,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 11,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18932,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 12.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18947,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 12.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18926,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 12.75,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18940,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18928,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18944,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18948,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.83,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18952,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.05,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18955,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.21,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18939,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18949,
+      "merchant_id": 184,
+      "qty": "5",
+      "value": 15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18946,
+      "merchant_id": 184,
+      "qty": "8",
+      "value": 15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18945,
+      "merchant_id": 184,
+      "qty": "5",
+      "value": 20,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18956,
+      "merchant_id": 184,
+      "qty": "3",
+      "value": 20,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18957,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 24.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18951,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 24.78,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18935,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18934,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18938,
+      "merchant_id": 184,
+      "qty": "4",
+      "value": 30,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18953,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 100,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18954,
+      "merchant_id": 184,
+      "qty": "3",
+      "value": 100,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   }
+],
+    sortName: "percent",
+    sortOrder: "desc",
+    // striped: true,
+    pagination:true,
+    pageSize:15
+  });
+  $("#tableDataSmall").bootstrapTable({
+    data: [
+   {
+      "id": 18925,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 1,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18927,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 1.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18937,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 2.04,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18950,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 3.56,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18958,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 4,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18941,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 4.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18943,
+      "merchant_id": 184,
+      "qty": "6",
+      "value": 5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18936,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18931,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 6,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18942,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 8.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18924,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 10,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18923,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 10,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18929,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 10.31,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18933,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 10.75,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18930,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 11,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18932,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 12.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18947,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 12.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18926,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 12.75,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18940,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18928,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18944,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18948,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 13.83,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18952,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.05,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18955,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.21,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18939,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 14.25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18949,
+      "merchant_id": 184,
+      "qty": "5",
+      "value": 15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18946,
+      "merchant_id": 184,
+      "qty": "8",
+      "value": 15,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18945,
+      "merchant_id": 184,
+      "qty": "5",
+      "value": 20,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18956,
+      "merchant_id": 184,
+      "qty": "3",
+      "value": 20,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18957,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 24.5,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18951,
+      "merchant_id": 184,
+      "qty": "1",
+      "value": 24.78,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18935,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18934,
+      "merchant_id": 184,
+      "qty": "25",
+      "value": 25,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   },
+   {
+      "id": 18938,
+      "merchant_id": 184,
+      "qty": "4",
+      "value": 30,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18953,
+      "merchant_id": 184,
+      "qty": "2",
+      "value": 100,
+      "percent": 22,
+      "price": 0,
+      "card_type": 1,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Physical Card"
+   },
+   {
+      "id": 18954,
+      "merchant_id": 184,
+      "qty": "3",
+      "value": 100,
+      "percent": 22,
+      "price": 0,
+      "card_type": 2,
+      "priority": 0,
+      "for_sale": 0,
+      "time_stamp": "2015-03-19T10:27:46.000Z",
+      "card_display_name": "Printable eCard"
+   }
+],
+    sortName: "value",
+    sortOrder: "desc",
+    // striped: true,
+    pagination:true,
+    pageSize:15
+  });
+  $('.filterable .filters input').keyup(function(e){
+    var code = e.keyCode || e.which;
+    if (code == '9') return;
+    var $input = $(this),
+    inputContent = $input.val().toLowerCase(),
+    $panel = $input.parents('.filterable'),
+    column = $panel.find('.filters td').index($input.parents('td')),
+    $table = $panel.find('.table'),
+    $rows = $table.find('tbody tr');
+    var $filteredRows = $rows.filter(function(){
+      var value = $(this).find('td').eq(column).text().toLowerCase();
+      return value.indexOf(inputContent) === -1;
+    });
+    $table.find('tbody .no-result').remove();
+    $rows.show();
+    $filteredRows.hide();
+    if($filteredRows.length === $rows.length)
+      $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No result found</td></tr>'));
+  });
+  
+});
+
+function setPercent(value) {
+  return value+'%';
+}
+function setValue(value) {
+  var actualValue = parseFloat(value).toFixed(2)
+  return '$'+actualValue;
+}
+function cardType(value) {
+  var displayNameHtml = '<div class="cardtags text-center">';
+  if(value){
+    displayNameHtml+='<span class="online-only">'+value+'</span></div>';
+  }
+  return displayNameHtml;
+}
+function setPrice(value,row) {
+  var cashValue = parseFloat(row.value-(((row.value)/100)*row.percent)).toFixed(2);
+  return '$'+cashValue;
+}
+function imgDate(){
+  if('merchants/AMC-Theaters.png') {
+    var imageName =  'merchants/AMC-Theaters.png';
+    imageName =  imageName.replace('merchants', '');
+    imageName =  imageName.replace('/', '');
+ } else {
+     var imageName = 'empity_img.png';    
+  }
+ return '<div style="background-image: url(\'https://s3.amazonaws.com/new-cardcash-images/images/merchants/'+imageName+'\');background-size: 100% auto; width:69px;"><img src="https://s3.amazonaws.com/new-cardcash-images/images/merchants/'+imageName+'" width="69" height="43"  />';
+}
+function setAddToCart(val,row,index) {
+  if(row.qty>0){
+  var disableB ='disableBtn';
+  } 
+  var addToCartHtml = '<button type="button" class="btn btn-sm btn-success add-to-cart '+disableB+'" onclick="buyCar(\''+row.percent+'\',this,\''+row.merchant_id+'\',\''+row.value+'\',\'cardQty-'+index+'\',\'\',\'1\',\'\',\''+row.card_type+'\')">ADD TO CART</button>';
+  return addToCartHtml = addToCartHtml;
+
+}
+function smallView(val,row,index) {
+    var actualValue = parseFloat(row.value).toFixed(2)
+    if('merchants/AMC-Theaters.png') {
+    var imageNameSmall =  'merchants/AMC-Theaters.png';
+    imageNameSmall =  imageNameSmall.replace('merchants', '');
+    imageNameSmall =  imageNameSmall.replace('/', '');
+ } else {
+     var imageNameSmall = 'empity_img.png';    
+  }
+  var cashValueSmall = parseFloat(row.value-(((row.value)/100)*row.percent)).toFixed(2);
+  if(row.card_display_name) {
+  var displayNameHtmlSmall='<div> <span class="cart-online-only3">'+row.card_display_name+'</span></div>';
+  }
+  if(row.qty>0) {
+  var disableB ='disableBtn';
+  } 
+  var addToCartHtmlSmall = '<button type="button" style="padding:5px" class="btn btn-sm btn-success add-to-cart '+disableB+'" onclick="buyCar(\''+row.percent+'\',this,\''+row.merchant_id+'\',\''+row.value+'\',\'cardQty-'+index+'\',\'\',\'1\',\'\',\''+row.card_type+'\')">ADD TO CART</button>';
+
+  var viewHtml = '<div class="row_small"><div class="col-xs-3"><img style="max-width:187px;width:100%; height:auto;margin-top: 8px;" class="card-image" src="https://s3.amazonaws.com/new-cardcash-images/images/merchants/'+imageNameSmall+'"></div>';
+      viewHtml+='<div class="col-xs-5"><div class="price_small">$'+actualValue+' for <strong>$'+cashValueSmall+'</strong></div>';
+      viewHtml+=displayNameHtmlSmall;
+      viewHtml+='</div><div class="col-xs-4 text-center"><div class="m_b5"><strong>QTY:</strong><span class="cardQty-'+index+'">'+row.qty+'</span></div>';
+      viewHtml+=addToCartHtmlSmall;
+      viewHtml+='</div></div>';
+  return viewHtml;
+}
+function checkQty(value,row,index) {
+  return '<span class="cardQty-'+index+'">'+value+'</span>';
+}
+</script>
+
+
+      <!-- Quick buy -->
+
+        <div class="row space15"></div>
+
+                <div class="table-responsive">
+
+<div class="large_view_cc filterable">
+<table id="tableData" class="table table-striped table-hover tabNoResult">
+              <thead>
+                <tr>
+                  <th data-formatter="imgDate" data-halign="center" data-align="center">&nbsp;</th>
+                  <th data-field="card_display_name" data-sortable="true" data-formatter="cardType" data-halign="center" data-align="center">Type</th>
+                  <th data-field="qty" data-sortable="true" data-formatter="checkQty" data-halign="center" data-align="center">Quantity</th>
+                  <th data-field="value" data-sortable="true" data-formatter="setValue" data-halign="center" data-align="center">Value</th>
+                  <th data-field="percent" data-sortable="true" data-formatter="setPercent" data-halign="center" data-align="center">% Off</th>
+                  <th data-field="value" data-sortable="true" data-formatter="setPrice" data-halign="center" data-align="center">Price</th>
+                  <th data-formatter="setAddToCart" data-halign="center" data-align="center"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td colspan="7">No result found</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="filters" style="display:none">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><input type="text" class="form-control" placeholder="Quantity"></td>
+                  <td><input type="text" class="form-control" placeholder="Value"></td>
+                  <td><input type="text" class="form-control" placeholder="% Off"></td>
+                  <td><input type="text" class="form-control" placeholder="Price"></td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+<div class="small_view_cc">
+<table id="tableDataSmall" class="table table-striped table-hover tabNoResult">
+              <thead>
+                <tr>
+                  <th colspan="7" data-field="card_display_name" data-formatter="smallView"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td colspan="6">No result found</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+                </div>
+      
+
+    </div>
+    </div>
+    <!--View Cart Starter-->
+      <!-- <div class="col-md-2">
+        <div class="panel_small_shopping_card_view">
+          <div class="panel_head_small_shopping_card_view">SHOPPING CART</div>
+          <div class="panel_body_small_shopping_card_view">
+            <div style="margin:0 0 10px" class="row">
+              <div class="col-md-12" style="padding: 0px;">
+                <div class="col-md-2">1x</div>
+                <div class="col-md-3"><img width="35" height="25" id="thumb-0" alt="walmart" src="/images/merchants/hd.jpg"></div>
+                <div class="col-md-4">Home Depot</div>
+                <div class="col-md-2">$13.45</div>
+              </div>
+            </div>
+            <div class="row" style="margin:0 0 10px">
+              <div style="padding: 0px;" class="col-md-12">
+                <div class="col-md-2">1x</div>
+                <div class="col-md-3"><img width="35" height="25" src="/images/merchants/hd.jpg" alt="walmart" id="thumb-0"></div>
+                <div class="col-md-4">Home Depot</div>
+                <div class="col-md-2">$13.45</div>
+              </div>
+            </div><hr>
+              <div style="margin:0 0 10px" class="row">
+              <div class="col-md-12">
+                Total Face Value:<strong> 198.31</strong>
+                Total Cost:<strong> $170.55</strong>          
+              </div>
+            </div>
+            
+             <div style="margin:0 0 10px" class="row ">
+              <div class="col-md-12" style="padding: 0px;">
+                <div class="col-md-6">Edit my card</div>
+                <div class="col-md-6"><button class="btn btn-sm btn-success add-to-cart" style="font-weight: bold;
+    padding: 6px 3px;">CHECKOUT</button></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>  
+      </div> -->
+
+    <!--view cart Starter-->
+
+
+  </div>
+
+
+</div>
+ 
+<style type="text/css">
+  .container.oknasir{
+    min-height:100px;
+  }.title-block{
+    background: #d1d2d4;
+    border: 3px solid #acb4bb;
+    border-radius: 4px;
+    padding: 10px;
+  }.title-block > h1 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }.title-block > a.btn {
+    float: right;
+    margin-top: 3px;
+  }.sidebar-text-block{
+    padding-bottom: 10px;
+  
+  }.sidebar-text-block.last{
+    border: none;
+  }.sidebar-text-block > h4{
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 900;
+  }.sidebar-text-block > p{
+    font-size: 12px;
+  }.sort-block{
+    text-align: center;
+  }.sort-block a {
+    color: inherit;
+    margin: 0 5px;
+    text-decoration: underline;
+    font-size: 13px;
+  }.btn-group{
+    float:right;
+  }.btn-group > .btn{
+    color:#212930 !important;
+  }.table td,.table th{
+    text-align: left;
+    vertical-align: top !important;
+  }.table .giftcard{
+    text-align: left !important;
+    width: 90px;
+  }table td.cardtags{
+    text-align: left !important;
+    vertical-align: middle !important;
+  }.cardtags > span {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /*cursor: pointer;*/
+    font-size: 11px;
+    padding: 3px 5px;
+  }.buybtn {
+    padding: 12px 15px 0 0 !important;
+    width: 60px;
+  }.table > tbody > tr.showdetail{
+    display: none;
+  }.table > tbody > tr.showdetail > td{
+    border: none;
+    text-align: left;
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.tooltips').tooltip();
+    $('.toogle-detail').click(function(){
+      var id = $(this).attr('id')
+      //$('.toogle-detail').on('click');
+      $("#tgl_"+id).toggle()
+      if($("#tgl_"+id).is(':visible')==false){
+        //$(this).next().show();
+        $(this).text('+Details');
+      } else {
+        //$(this).next().hide();
+        $(this).text('-Details');
+      }
+    });
+  });
+</script>
+<!-- 
+<script>
+
+ 
+  var aaa = jQuery.noConflict(); 
+   
+ 
+</script>
+<script src='/js/application-344d7ec4ac37cbdbb920029ee5023348.js'></script> -->
+
+
+<script>
+  $(function() {
+    $( "#slider-range-max" ).slider({
+      range: "max",
+      min: 0,
+      max: 100,
+      value: 0,
+      slide: function( event, ui ) {
+        $( "#discount" ).val( ui.value+"%" );
+      }
+    });
+     
+  });
+  </script>
+<!-- Modal -->
+<div class="modal fade" id="setAlerts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content pull-left">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Brand Alert Settings</h4>
+      </div>
+      <div class="modal-body pull-left p_rel">
+      <form id="brand_alerts"  method="post">
+         <div class="alert alert-danger danger-mg well-sm display_none"  >  </div>
+         
+      <h4>Email me when Amc Theaters  gift cards become available.</h4>
+         <div class="pull-left w_100pr m_t_10">
+          <div class="col-xs-12"> Maximum price </div>
+         </div>
+         <div class="pull-left w_100pr m_t_10">
+          <div class="col-xs-4"> 
+            <input type="text" class="form-control input-sm" name="price"> 
+          </div>
+         </div>
+
+         <div class="pull-left w_100pr m_t_10">
+          <div class="col-xs-12"> Discount Range undefined</div>
+         </div>
+
+         <div class="pull-left w_100pr m_t_10">
+          <div class="col-xs-12"> 
+            <div id="slider-range-max"></div>
+            
+          </div>
+         </div>
+
+         <div class="pull-left w_100pr m_t_10 col-xs-12">
+          
+         <div class="pull-left">Min Discount: <input type="text" style="border:none;width:50px;" value="0" readonly="readonly" id="discount" name="discount"></div>
+         <div class="pull-right">Max Discount: <strong>100%</strong></div>
+          
+         </div>
+
+        
+         <input type="hidden" name="merchant_id" value="184">
+         <div class="modal-footer modal-footer w_100pr pull-left">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+            <button class="btn btn-primary" type="submit">Set Alert</button>
+            <img src="/images/preloader.gif" class="loadingImg" style="display:none;">
+          </div>
+
+         </form>
+      </div> <!-- body end  -->
+      
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="cardAvailability" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+       
+      <div id="split_message" role="alert" class="alert alert-danger2 text-center  fade in pull-left w_100pr m_t_10  " > 
+     Card is no longer available.
+    </div>
+       
+    </div>
+  </div>
+</div>
+<style>
+.cart-online-only3 {
+    background-color: #3c4d67;
+    border-radius: 2px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    line-height: 17px;
+    margin: 6px 0;
+    padding: 2px 0;
+    text-align: center;
+    width: 100px;
+}
+.small_view_cc{
+      display:none;
+    }
+.large_view_cc{
+      /*display:table-row;*/
+    }
+.row_small{
+  padding:5px 0;  
+  }
+.row_small h3{
+  font-size:16px;
+  margin:4px 0; 
+  padding:0;
+  font-weight:bold;
+  }
+.row_small .btn{
+font-size:8px;  
+  }
+.m_b5{
+margin-bottom:5px;  
+  }
+.fixed-table-pagination .pagination-detail {
+    display: none;
+}.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+  border-left: none;
+  border-right: none;
+}#tableData td + td {
+    padding-top: 15px;
+}.fixed-table-container {
+    border: medium none;
+}#tableData > thead {
+    background-color: #e7e7e8;
+}
+.pagination > .active > a, .pagination > .active > a:hover {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  color: #fff;
+}
+.fixed-table-pagination .pagination a {
+  margin: 0 1px;
+}
+@media (max-width:550px){
+  .row_small{
+  font-size:11px; 
+    }
+  .row_small h3{
+    font-size:12px;
+    }
+    .small_view_cc{
+      display:table-row;
+    }
+.large_view_cc{
+      display:none;
+    }
+.cart-online-only3 {
+    font-size: 8px;
+    width: 68px;
+}
+.fixed-table-pagination .pagination a {
+    line-height: 2;
+    padding: 2px 6px;
+}
+.btn-group > .btn, .btn-group-vertical > .btn {
+    line-height: 1em;
+    padding: 0 4px;
+    size: 9px;
+}
+.fixed-table-pagination .pagination, .fixed-table-pagination .pagination-detail {
+    font-size: 12px;
+}
+.fixed-table-pagination .pagination-detail {
+    display: none;
+}
+.price_small {
+    width: 130%;
+}
+.table-responsive{
+  border: none;
+}
+.th-inner{
+  display: none;
+}   
+  }   
+</style>
+<!-- ************************************* Main Area End****************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="question-section">
+      <strong>任何疑问?</strong> 请联系我们的客服 <strong>1-800-227-4214</strong> 或者 &nbsp;
+      <a class="btn btn-dark btn-big" href="https://new.cardcash.com/contact/questions/">发送邮件</a>
+</div>
+
+
+
+<!-- ************** Footer Fixed ************** -->
+<div class="footer-section" style="height:350px;">
+  <div class="container">
+  <div class="row">
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">产品服务</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Log In / Sign Up</a></li>
+          <li><a href="#">Checkout</a></li>
+          <li><a href="#">My Wishlist</a></li>
+          <li><a href="#">My Cart</a></li>
+          <li><a href="#">What’s New</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">客户信息</h3>
+        <ul>
+          <li><a href="#">Cloting</a></li>
+          <li><a href="#">Feeding Bottles</a></li>
+          <li><a href="#">Diaper</a></li>
+          <li><a href="#">Infant Clothes</a></li>
+          <li><a href="#">Educational Baby Toys</a></li>
+          <li><a href="#">Strollers &amp; Pams</a></li>
+          <li><a href="#">Creams &amp; Ointments</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">关于我们</h3>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Franchisee</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-3">
+
+
+      <aside class="widget widget_newsletter">
+        <h3 class="widget-title">订阅</h3>
+        <form action="#" id="newsletter">
+          <label for="newsletter-email">Get Our Newsletter</label>
+          <div class="input-group">
+            <input type="text" name="newsletter-email" id="newsletter-email" placeholder="Email" class="form-control input-lg">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-lg" type="button"><i class="glyphicon glyphicon-envelope"></i></button>
+            </span>
+          </div>
+        </form>
+      </aside>
+
+      <aside class="widget widget_social_profiles">
+        <h3 class="widget-title">联系我们</h3>
+        <ul class="social-profiles">
+          <li>
+            <a href="#" title="Facebook">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Google+">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Pinterest">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+
+    <div class="col-sm-3">
+      
+      <aside class="widget widget_text">
+        <h3 class="widget-title">支付方式</h3>
+        <img src="../img/payments.png" alt="">
+      </aside>
+
+      <aside class="widget widget_text">
+        <h3 class="widget-title">免运费哦，亲</h3>
+        <p class="free-shipping"><i class="fa fa-plane fa-3x"></i> <span>On orders over $50</span></p>
+      </aside>
+
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div id="copyright">
+  <div class="container">
+    <span>copyright@2015 iHaoKa 京ICP备00000000号 |  京公网安备000000000  </span>
+  </div>
+</div>
+<!-- ************** Footer Fixed End************** -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="../card_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="../card_files/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../card_files/bootstrap-table.min.js"></script>
+
+<script type="text/javascript" src="../card_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../card_files/placeholders.min.js"></script>
+<script type="text/javascript" src="../card_files/general.js"></script>
+
+
+</body>
+
+</html>

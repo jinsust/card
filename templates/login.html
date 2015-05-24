@@ -1,0 +1,241 @@
+
+
+<script type="text/javascript">
+$().ready(function() {
+
+$("#step3From_Login").validate({
+
+rules: {
+
+   login_email: {
+    required: true,
+    email: true
+   },
+
+   login_password: {
+    required: true,
+    minlength: 5
+   },
+
+   pad:{
+   }
+},
+        
+messages: {
+
+   login_email: {
+    required: "请输入Email地址",
+    email: "请输入正确的email地址"
+   },
+   
+   login_password: {
+    required: "请输入确认密码",
+    minlength: "确认密码不能小于5个字符",
+   },
+  
+   pad:{
+   }
+},
+
+  errorPlacement: function( error, element ) {
+    error.insertAfter( element.parent() );  //appendTo
+  }
+
+}); //Login validate
+
+
+$("#step3From_registration").validate({
+
+rules: {
+
+   username: {
+    required: true,
+    minlength: 5
+   },
+
+   email: {
+    required: true,
+    email: true
+   },
+
+   password: {
+    required: true,
+    minlength: 5
+   },
+
+   conf_password: {
+    required: true,
+    minlength: 5,
+    equalTo: "#password"
+    }, 
+
+   phone: {
+    required: true,
+    minlength: 11,  
+    maxlength:11,  
+    number:true
+   },
+
+   pad:{
+
+   }
+},
+        
+messages: {
+
+   username: {
+    required: "请输入用户名",
+    minlength: "请输入至少5个字符"
+   },
+
+   email: {
+    required: "请输入Email地址",
+    email: "请输入正确的email地址"
+   },
+   
+   password: {
+    required: "请输入确认密码",
+    minlength: "确认密码不能小于5个字符",
+   },
+
+   conf_password: {
+    required: "请输入确认密码",
+    minlength: "确认密码不能小于5个字符",
+    equalTo: "两次输入密码不一致"
+    },   
+
+   phone: {
+    required: "请输入11位正确的电话号码",
+    minlength: "请输入11位正确的电话号码",  
+    maxlength:"请输入11位正确的电话号码",  
+    number:"非法字符"
+   },     
+
+   pad:{
+      
+   }
+},
+
+  errorPlacement: function( error, element ) {
+    error.insertAfter( element.parent() );  //appendTo
+  }
+
+}); //Register validate
+
+
+
+}); //function
+</script>
+
+<div class="pull-left w_100pr m_t_40">
+    <!-- <hr class="brown-hr"> -->
+  <div class="pull-left w_100pr m_t_40 m_b_90 ">
+    <div class="container ">
+
+
+    <form role="form" method="post" id="step3From_Login" novalidate="novalidate">
+        <div class="col-md-5">
+          <div class="block-2">    
+            <h2>Existing customer? Login </h2>
+             <p id="login_resMessage" class="alert  well-sm alert-mg2 display_none"></p> 
+              <p id="login_resMessage_success" class="alert  well-sm alert-mg2 display_none"></p> 
+            <div class="pull-left w_100pr m_b_10">
+              <div class="col-md-12">
+                <input type="text" required="" name="login_email" id="login_email" class="form-control text-field" placeholder="Email Address" aria-required="true">
+               </div>            
+            </div>
+            <div class="pull-left w_100pr m_b_10">
+            <div class="col-md-12">
+                <input type="password" required="" name="login_password" id="login_password" class="form-control text-field " placeholder="Password" aria-required="true">
+            </div>            
+            </div>
+            <div class="pull-left w_100pr m_t_20 m_b_20">
+              <a href="javascript:" data-toggle="modal" data-target="#forgetMod" class="f_red col-xs-4"> 忘记密码？ </a>
+              <input class="btn btn-info2 btn-red-big pull-right btn-adjust btn-login" type="submit" value="LOG IN">
+             <img src="static/img/ajax-loader (11).gif" class="loadingImg pull-right m_t_10" style="display:none;">
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="logIp" id="logIp" value=" 141.101.81.212">
+    </form>
+        
+
+    <form role="form" id="step3From_registration" method="post" novalidate="novalidate">    
+        <div class="col-md-7 step3From_Login">
+          <div class="block-2" style="border-radius:5px 5px 0 0">
+          
+            <h2>NEW CUSTOMER</h2>
+            <div class="pull-left w_100pr m_b_10">
+                <div class="col-md-12"><input id="username" name="username" type="text" class="form-control text-field" placeholder="username"> </div>
+            </div>
+            <div class="pull-left w_100pr m_b_10">
+                <div class="col-md-12"> 
+                <input id="email" name="email" type="text" class="required email form-control text-field" placeholder="Email Address">
+                </div>            
+            </div>
+
+            <div class="pull-left w_100pr m_b_10">
+                <div class="col-md-12"> 
+                <input id="password" name="password" type="text" class="required  form-control text-field" placeholder="password">
+                </div>            
+            </div>
+           
+            <div class="pull-left w_100pr m_b_10">
+                <div class="col-md-12"> 
+                <input id="conf_password" name="conf_password" type="text" class="required  equalTo:'#password' form-control text-field" placeholder="Confirm password">
+                </div>            
+            </div>
+
+            <div class="pull-left w_100pr m_b_10">
+              <div class="col-md-12"> 
+                <input id="phone" name="phone" type="text" class="form-control text-field" placeholder="Phone">
+              </div>            
+            </div>
+
+            <div class="pull-left w_100pr m_b_10">
+              <div class="col-md-4"> 
+                    <input id="city" name="city" type="text" class="form-control text-field" placeholder="City">
+              </div>
+
+              <div class="col-md-4"> 
+                  <select id="state" name="state" class="form-control text-field">
+                      <option value="">Select State</option>                  
+                          <option value="BJ">Beijing</option>
+                          <option value="SH">Shanghai</option>
+                  </select>
+              </div>
+
+              <div class="col-md-4"> 
+                   <input id="zip_code" name="zip_code" type="text" class="form-control text-field" placeholder="Zip Code">
+              </div>
+            </div>
+
+            <div class="pull-left w_100pr m_b_10">
+            <div class="col-md-12"> 
+                <input id="primary_address" name="primary_address" type="text" class="form-control text-field" placeholder="Primary Address">
+            </div>            
+            </div>
+
+            <div class="pull-left w_100pr m_b_10">
+              <div class="col-md-12"> 
+
+                <input id="address_line_2" name="address_line_2" type="text" class="form-control text-field" placeholder="Address Line 2">
+
+              </div>            
+            </div>
+
+
+            <div class="pull-left w_100pr m_t_10  m_b_10"> 
+              <div class="col-md-6 pull-right "><input id="signupSub" class="btn btn-info2 btn-red-big pull-right btn-adjust" style="width:120px;" type="submit" value="SIGN UP" ></div>
+              <img src="img/ajax-loader (11).gif" class="loadingImg pull-right m_t_10" style="display:none;">
+            </div>
+
+        </div> 
+        </div>
+            <input type="hidden" name="regIp" id="regIp" value=" 141.101.81.212">
+    </form>
+      
+    </div>
+    </div>
+    </div>
+

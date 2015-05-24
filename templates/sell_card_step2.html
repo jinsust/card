@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class=" js no-touch">
+
+<!--  ************************** Header **************************** -->
+<head onload="steSession()">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <title>礼品卡交易系统</title>
+    <meta name="description" content="提供将闲置的礼品卡置换成现金的交易平台，同时出售多种类礼品卡" />
+    <meta name="Keywords" content="礼品卡，现金，出售，购买，折扣" /> 
+    <meta name="author"   content="北瑾青年" >
+    <link rel="shortcut icon" href="img/icon.png">
+    <!-- <script async="" src="card_files/gtm.js"></script><script async="" src="card_files/analytics.js"></script> -->
+    <script type="text/javascript" src="card_files/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" rel="stylesheet" href="card_files/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="card_files/bootstrap-table.min.css">
+    <link type="text/css" rel="stylesheet" href="card_files/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="card_files/style.css">
+    <link type="text/css" rel="stylesheet" href="card_files/style-offer.css">
+    <link type="text/css" rel="stylesheet" href="card_files/responsive.css">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet",type="text/css">
+    <link href="css/my-addition.css" rel="stylesheet">
+
+<script>
+    var totalVal = "2"+"0";
+    totalVal = parseInt(totalVal);
+    $("#total_cards_qty").val(totalVal);
+    $("#total_cards").val(totalVal);
+    $("#del_order").val(totalVal);
+</script>    
+
+
+</head>
+
+
+
+<!-- ***************************** Body ************************************ -->
+<body>
+
+<!-- Include the view file for the current controller/route -->
+<!-- <script type="text/javascript" src="card_files/all.two.js"></script>
+<script type="text/javascript" src="card_files/all.js"></script>
+<script type="text/javascript" src="card_files/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="card_files/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="card_files/iscroll.js"></script>
+<script type="text/javascript" src="card_files/jquery.scrollmagic.min.js"></script>
+<script type="text/javascript" src="card_files/demo.js"></script>
+<script type="text/javascript" src="js/step1.js"></script>
+<script type="text/javascript" src="js/step2.js"></script> -->
+
+<link href="card_files/style.css" rel="stylesheet">
+
+
+<!-- ******** Navbar fixed Start ********** -->
+<div class="header-home">
+  <div class="container" style="padding:0;">
+      <div class="navbar navbar-inverse " role="navigation">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html"><img src="card_files/logo.png"></a>
+          <div class="search-box">
+              <i class="glyphicon glyphicon-search"></i>
+              <input type="text" id="CardsSearchField" placeholder="搜索：输入礼品卡关键字" class="form-control ui-autocomplete-input" autocomplete="off" autofocus="" style="font-style: normal;">
+          </div>
+      </div>
+           
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-left" style="margin-top: 20px; margin-left:20px">
+              <li><a href="buy_card.html">购买礼品卡</a></li>
+              <li class="active"><a href="sell_card.html">出售礼品卡</a></li>
+              <li><a href="help.html">帮助</a></li>
+              <!-- <li class="helpie8"><a href="/help">helpIE8</a></li> -->
+          </ul>
+
+          <div class="pull-right">
+              <div class="top-login-links2">
+                      <ul>                         
+                         <li><span class=" p_rel "> <a href="login.html" class="">登录</a></span></li>
+                        
+                         
+                        <li><span class=" p_rel "> <a href="cart.html" class="cart-link dropdown-toggle" onclick="fetchCart()"><img src="card_files/card_cash.png">购物车 <span class="badge2" style="font-size: 10px;">0</span></a> </span></li>
+                      </ul>
+                </div>
+            </div>
+      </div>
+      </div>
+  </div>
+</div>
+<!-- ******** Navbar fixed End ********** -->
+
+
+<form class="appnitro" role="form" id="step2From" name="step2From" method="post">
+
+  <div class="loading_section" id="loader" style="display:none;"><img class=" " alt="" src="img/sell/ajax-loader (17).gif" style="margin-top:300px;"></div>
+
+  <div class="pull-left w_100pr m_t_90">
+      <div class="container">
+        <div class="col-md-4">
+            <h1 class="heading-3 w_100pr m_t_90 m_b_40"> Sell Gift Cards</h1>
+        </div>
+        <div class="col-md-8">
+           <div class="septs-section">
+              <img src="img/sell/step2.jpg" alt="" >
+           </div> 
+        </div>
+      </div>
+  </div>
+
+
+
+  <!--  **************************************************************** Main area Starts ****************************************************************************** -->
+  <div class="pull-left w_100pr search-section ">
+      <div class="container p_rel">
+
+      <div role="alert" class="alert alert-success2  fade in pull-left w_100pr m_t_15 m_b_10">
+          <button style="opacity:1;" data-dismiss="alert" class="close" type="button">
+          <img src="/images/green-cross.png"><span class="sr-only">Close</span></button>
+            Entering card information helps us process your order faster and pay you more quickly.
+      </div>
+
+      <div class="new-block cards_details_append">
+            <!--Heading Start-->
+            <div class="row row_haed_cand">
+                <div class="col-xs-12">
+                    <div class="col-xs-1">&nbsp;</div>
+                    <div class="col-xs-2">MERCHANT</div>
+                    <div class="col-xs-5">CARD NUMBER</div>
+                    <div class="col-xs-1 col-xs-1_cls">&nbsp;</div>
+                    <div class="col-xs-3">CARD PIN</div>
+                </div>
+            </div>
+            <!--Heading End-->
+
+            <div id="duplicateRecord" class="duplicateNumber" style="display:none;"> Please remove the duplicate card(s).</div>   
+            <div id="merchant_required" class="merchant_required" style="display:none;"> Please fill all the merchant(s).</div>   
+            <div id="cards_removed" class="merchant_required" style="display:none;"> Please add merchant(s) to proceed.</div>  
+            <div id="need_balance" class="merchant_required" style="display:none;"> Please confirm balance to proceed.</div>   
+            <input type="hidden" id="del_order" name="del_order" value="20">
+            <input type="hidden" id="total_cards" name="total_cards" value="20">
+
+   
+            <div id="appendme">
+                 <!--Card Row Start-->
+                <div id="pleasefill" class="alert alert-info " style="display:none; font-size: 20px; text-align: center;">
+                  Please fill all the fields
+                </div>
+                <input type="hidden" id="total_cards_qty" name="total_cards_qty" value="20">
+      
+                <span id="fullcard_291365_463810">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-xs-1">&nbsp; <img src="img/default.jpg" width="50"></div>
+                            <div class="col-xs-2">Walmart ($100)</div>
+                            <div class="col-xs-5">
+                                <input class="form-control cardNum" id="number_291365_463810" name="number[]" type="text" value="" placeholder="Card Number">
+                                <span id="cardError_291365_463810" class="f_red cards_error_message clear"></span>
+                            </div>
+                            <div class="col-xs-1 col-xs-1_cls ">&nbsp;</div>
+                            <div class="col-xs-3">
+                                <input id="pin_291365_463810" name="pin[]" class="form-control" type="text" value="" placeholder="Pin Number">
+                                <span id="pinError_291365_463810" class="f_red cards_error_message clear"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="order_id_291365_463810" name="card_orders_id[]" value="291365_463810">
+                    <input type="hidden" id="merchant_id_291365_463810" name="merchant[]" value="540">
+                </span>
+           
+                <span id="fullcard_291365_463811">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-xs-1">&nbsp; <img src="img/default.jpg" width="50"></div>
+                            <div class="col-xs-2">Best Buy ($100)</div>
+                            <div class="col-xs-5">
+                                <input class="form-control cardNum" id="number_291365_463811" name="number[]" type="text" value="" placeholder="Card Number">
+                                <span id="cardError_291365_463811" class="f_red cards_error_message clear"></span>
+                            </div>
+                            <div class="col-xs-1 col-xs-1_cls ">&nbsp;</div>
+                            <div class="col-xs-3">
+                                <input id="pin_291365_463811" name="pin[]" class="form-control" type="text" value="" placeholder="Pin Number">
+                                <span id="pinError_291365_463811" class="f_red cards_error_message clear"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="order_id_291365_463811" name="card_orders_id[]" value="291365_463811">
+                    <input type="hidden" id="merchant_id_291365_463811" name="merchant[]" value="8">
+                </span>
+                <!--Card Row End-->
+                  
+       
+                <div id="appendCards">
+                </div>
+          
+                <div class="pull-right m_t_20 m_r_15">
+                    <input type="hidden" value="200" id="moreItem" name="moreItem">
+                    <input class="btn  m_r_10 btn-primary bld" value="&nbsp; BACK &nbsp;" onclick="goToStep1()" type="button">
+                    
+ <!--                    <input class="btn btn-success bld" value="&nbsp; NEXT &nbsp;" type="button" onclick="submitForm()"> -->
+                    <a href="sell_card_step3_amazon.html"><input class="btn btn-success bld" value="&nbsp; NEXT &nbsp;" type="button" onclick="submitForm()"></a>
+
+                </div>
+            </div> <!-- End of appendme -->
+
+      </div> <!-- END of cards_details_append-->
+      </div> 
+  </div> <!-- END of search-section-->
+  <!--  **************************************************************** Main area Ends *********************************************************************************-->
+
+
+
+
+  <div class="pull-left w_100pr m_t_90 m_b_90 ">
+     <div class="container">
+          <div class="col-md-4  text-center">
+            <div class="options-block">
+              <div class="pull-left w_100pr text-center"> <img src="img/sell/offer-icon.png" alt=""></div>
+              <h2>Get Offer.</h2>
+              <p> Enter some basic card information for
+                  a quick trade amount offer. In less than
+                  10 seconds you can see how much we
+                  will give you in exchange for your gift
+                  cards!</p>
+            </div>
+          </div>
+
+          <div class="col-md-4  text-center">
+           <div class="options-block">
+              <div class="pull-left w_100pr text-center"> <img src="img/sell/card-icon.png" alt=""></div>
+              <h2>Submit Your Cards.</h2>
+              <p>Enter your card information such
+                  as card numbers and pin and some
+                  basic personal information. Your card
+                  balance will be checked and verified
+                  behind the scenes to ensure the fastest
+                  and most secure process possible.</p>
+           </div>
+          </div>
+
+          <div class="col-md-4  text-center">
+           <div class="options-block">
+            <div class="pull-left w_100pr text-center"> <img src="img/sell/letter-icon.png" alt=""></div>
+            <h2>Receive Money or Trade Gift Card.</h2>
+            <p> You will receive money once the order is confirmed and cards balance is verified.</p>
+            </div>
+          </div>
+    </div>
+  </div>
+
+
+  <div class="question-section">
+        <strong>Questions?</strong> Contact one of our Customer Representatives at <strong>1-800-227-4214</strong> or &nbsp;
+        <a class="btn btn-dark btn-big" href="/contact/questions/">Email Us</a>
+  </div>
+</form>
+
+
+
+
+<!-- ***************************** PoP Up: Bulk Seller *********************************-->
+<div class="popup_smal_offer_outer" style="display: none;" id="bulkPopup">
+    <div class="bulk_popup_smal_offer">
+     <div class="bulk_popup_smal_offer_head">
+       <a href="/login">Login and download bulk sell form here</a><span onclick="bulkPopup(0)">x</span>
+      </div>
+      <div class="popup_smal_offer_body">
+       <p class="text-center">
+        Are you selling $5000+ in <br> Gift Cards today?<br>For more personal service, call:<br>
+        855-364-0488</p>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- ***************************** Contact US PoP Up *********************************-->
+<div class="popup_smal_offer_outer" style="display: none;" id="contactUsPopup">
+        <div class="popup_smal_offer">
+            <div class="popup_smal_offer_head">
+                Contact Us <span onclick="contUsPopSH(0)">x</span>
+            </div>
+            <div class="popup_smal_offer_body">
+                <strong>Email Address: </strong> <span style=" color: #1290d9;">
+       <a href="mailto:cvssupport@cardcash.com?Subject=Hello" target="_top">cvssupport@cardcash.com<script cf-hash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a><br><br></span>
+                <strong>Phone:</strong> (855) CVS - 7555
+            </div>
+
+        </div>
+</div>
+
+ 
+
+
+<!-- ************** Footer Fixed ************** -->
+<div class="footer-section" style="height:350px;">
+  <div class="container">
+  <div class="row">
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">产品服务</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Log In / Sign Up</a></li>
+          <li><a href="#">Checkout</a></li>
+          <li><a href="#">My Wishlist</a></li>
+          <li><a href="#">My Cart</a></li>
+          <li><a href="#">What’s New</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">客户信息</h3>
+        <ul>
+          <li><a href="#">Cloting</a></li>
+          <li><a href="#">Feeding Bottles</a></li>
+          <li><a href="#">Diaper</a></li>
+          <li><a href="#">Infant Clothes</a></li>
+          <li><a href="#">Educational Baby Toys</a></li>
+          <li><a href="#">Strollers &amp; Pams</a></li>
+          <li><a href="#">Creams &amp; Ointments</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-2">
+      <aside class="widget widget_nav_menu">
+        <h3 class="widget-title">关于我们</h3>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Franchisee</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="col-sm-3">
+
+
+      <aside class="widget widget_newsletter">
+        <h3 class="widget-title">订阅</h3>
+        <form action="#" id="newsletter">
+          <label for="newsletter-email">Get Our Newsletter</label>
+          <div class="input-group">
+            <input type="text" name="newsletter-email" id="newsletter-email" placeholder="Email" class="form-control input-lg">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-lg" type="button"><i class="glyphicon glyphicon-envelope"></i></button>
+            </span>
+          </div>
+        </form>
+      </aside>
+
+      <aside class="widget widget_social_profiles">
+        <h3 class="widget-title">联系我们</h3>
+        <ul class="social-profiles">
+          <li>
+            <a href="#" title="Facebook">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Google+">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Pinterest">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+
+    <div class="col-sm-3">
+      
+      <aside class="widget widget_text">
+        <h3 class="widget-title">支付方式</h3>
+        <img src="img/payments.png" alt="">
+      </aside>
+
+      <aside class="widget widget_text">
+        <h3 class="widget-title">免运费哦，亲</h3>
+        <p class="free-shipping"><i class="fa fa-plane fa-3x"></i> <span>On orders over $50</span></p>
+      </aside>
+
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div id="copyright">
+  <div class="container">
+    <span>copyright@2015 iHaoKa 京ICP备00000000号 |  京公网安备000000000  </span>
+  </div>
+</div>
+<!-- ************** Footer Fixed End************** -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="card_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="card_files/jquery.validate.min.js"></script>
+<script type="text/javascript" src="card_files/bootstrap-table.min.js"></script>
+
+<script type="text/javascript" src="card_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="card_files/placeholders.min.js"></script>
+<!-- <script type="text/javascript" src="card_files/general.js"></script> -->
+
+
+</body>
+
+</html>
